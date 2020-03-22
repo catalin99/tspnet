@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="Model1.User" />
+    <EntitySet Name="Movies" EntityType="Model1.Movie" />
+    <EntitySet Name="Photos" EntityType="Model1.Photo" />
+    <EntitySet Name="PropertyCodes" EntityType="Model1.PropertyCode" />
+    <EntitySet Name="Properties" EntityType="Model1.Property" />
+    <AssociationSet Name="PropertyMovie" Association="Model1.PropertyMovie">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Movie" EntitySet="Movies" />
+    </AssociationSet>
+    <AssociationSet Name="PropertyPhoto" Association="Model1.PropertyPhoto">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Photo" EntitySet="Photos" />
+    </AssociationSet>
+    <AssociationSet Name="PropertyPropertyCode" Association="Model1.PropertyPropertyCode">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="PropertyCode" EntitySet="PropertyCodes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" />
+    <Property Name="LastName" Type="String" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" />
+    <Property Name="Phone" Type="String" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullPath" Type="String" Nullable="false" />
+    <Property Name="MovieName" Type="String" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+    <Property Name="Event" Type="String" Nullable="false" />
+    <Property Name="TaggedPersons" Type="String" Nullable="false" />
+    <Property Name="Location" Type="String" Nullable="false" />
+    <Property Name="FlgMoved" Type="Boolean" Nullable="false" />
+    <Property Name="Duration" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Property" Relationship="Model1.PropertyMovie" FromRole="Movie" ToRole="Property" />
+    <Property Name="PropertyID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Photo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullPath" Type="String" Nullable="false" />
+    <Property Name="PhotoName" Type="String" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+    <Property Name="Event" Type="String" Nullable="false" />
+    <Property Name="TaggedPersons" Type="String" Nullable="false" />
+    <Property Name="Location" Type="String" Nullable="false" />
+    <Property Name="FlgMoved" Type="Boolean" Nullable="false" />
+    <Property Name="Height" Type="Int32" Nullable="false" />
+    <Property Name="Weight" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Property" Relationship="Model1.PropertyPhoto" FromRole="Photo" ToRole="Property" />
+    <Property Name="PropertyID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyCode">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" />
+    <NavigationProperty Name="Properties" Relationship="Model1.PropertyPropertyCode" FromRole="PropertyCode" ToRole="Property" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Movies" Relationship="Model1.PropertyMovie" FromRole="Property" ToRole="Movie" />
+    <NavigationProperty Name="Photos" Relationship="Model1.PropertyPhoto" FromRole="Property" ToRole="Photo" />
+    <NavigationProperty Name="PropertyCodes" Relationship="Model1.PropertyPropertyCode" FromRole="Property" ToRole="PropertyCode" />
+  </EntityType>
+  <Association Name="PropertyMovie">
+    <End Type="Model1.Property" Role="Property" Multiplicity="1" />
+    <End Type="Model1.Movie" Role="Movie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Movie">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PropertyPhoto">
+    <End Type="Model1.Property" Role="Property" Multiplicity="1" />
+    <End Type="Model1.Photo" Role="Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PropertyPropertyCode">
+    <End Type="Model1.Property" Role="Property" Multiplicity="*" />
+    <End Type="Model1.PropertyCode" Role="PropertyCode" Multiplicity="*" />
+  </Association>
+</Schema>

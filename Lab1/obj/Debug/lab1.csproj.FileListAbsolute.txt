@@ -1,0 +1,6 @@
+C:\Faculty\tspnet\tspnet\lab1\bin\Debug\lab1.exe.config
+C:\Faculty\tspnet\tspnet\lab1\bin\Debug\lab1.exe
+C:\Faculty\tspnet\tspnet\lab1\bin\Debug\lab1.pdb
+C:\Faculty\tspnet\tspnet\lab1\obj\Debug\lab1.csprojAssemblyReference.cache
+C:\Faculty\tspnet\tspnet\lab1\obj\Debug\lab1.exe
+C:\Faculty\tspnet\tspnet\lab1\obj\Debug\lab1.pdb

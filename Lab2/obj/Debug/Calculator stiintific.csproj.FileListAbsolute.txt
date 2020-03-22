@@ -1,0 +1,9 @@
+C:\Faculty\tspnet\tspnet\Calculator stiintific\bin\Debug\Calculator stiintific.exe.config
+C:\Faculty\tspnet\tspnet\Calculator stiintific\bin\Debug\Calculator stiintific.exe
+C:\Faculty\tspnet\tspnet\Calculator stiintific\bin\Debug\Calculator stiintific.pdb
+C:\Faculty\tspnet\tspnet\Calculator stiintific\obj\Debug\Calculator stiintific.csprojAssemblyReference.cache
+C:\Faculty\tspnet\tspnet\Calculator stiintific\obj\Debug\Calculator_stiintific.Form1.resources
+C:\Faculty\tspnet\tspnet\Calculator stiintific\obj\Debug\Calculator_stiintific.Properties.Resources.resources
+C:\Faculty\tspnet\tspnet\Calculator stiintific\obj\Debug\Calculator stiintific.csproj.GenerateResource.cache
+C:\Faculty\tspnet\tspnet\Calculator stiintific\obj\Debug\Calculator stiintific.exe
+C:\Faculty\tspnet\tspnet\Calculator stiintific\obj\Debug\Calculator stiintific.pdb

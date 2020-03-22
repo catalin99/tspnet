@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Users" EntityType="Model1.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Movies" EntityType="Model1.Store.Movies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Photos" EntityType="Model1.Store.Photos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropertyCodes" EntityType="Model1.Store.PropertyCodes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Properties" EntityType="Model1.Store.Properties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropertyPropertyCode" EntityType="Model1.Store.PropertyPropertyCode" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PropertyMovie" Association="Model1.Store.PropertyMovie">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Movie" EntitySet="Movies" />
+    </AssociationSet>
+    <AssociationSet Name="PropertyPhoto" Association="Model1.Store.PropertyPhoto">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Photo" EntitySet="Photos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropertyPropertyCode_Property" Association="Model1.Store.FK_PropertyPropertyCode_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="PropertyPropertyCode" EntitySet="PropertyPropertyCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropertyPropertyCode_PropertyCode" Association="Model1.Store.FK_PropertyPropertyCode_PropertyCode">
+      <End Role="PropertyCode" EntitySet="PropertyCodes" />
+      <End Role="PropertyPropertyCode" EntitySet="PropertyPropertyCode" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Movies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MovieName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="Event" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TaggedPersons" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FlgMoved" Type="bit" Nullable="false" />
+    <Property Name="Duration" Type="int" Nullable="false" />
+    <Property Name="PropertyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Photos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhotoName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="Event" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TaggedPersons" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FlgMoved" Type="bit" Nullable="false" />
+    <Property Name="Height" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="int" Nullable="false" />
+    <Property Name="PropertyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyCodes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Properties">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyPropertyCode">
+    <Key>
+      <PropertyRef Name="Properties_ID" />
+      <PropertyRef Name="PropertyCodes_ID" />
+    </Key>
+    <Property Name="Properties_ID" Type="int" Nullable="false" />
+    <Property Name="PropertyCodes_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PropertyMovie">
+    <End Role="Property" Type="Model1.Store.Properties" Multiplicity="1" />
+    <End Role="Movie" Type="Model1.Store.Movies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Movie">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PropertyPhoto">
+    <End Role="Property" Type="Model1.Store.Properties" Multiplicity="1" />
+    <End Role="Photo" Type="Model1.Store.Photos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropertyPropertyCode_Property">
+    <End Role="Property" Type="Model1.Store.Properties" Multiplicity="1" />
+    <End Role="PropertyPropertyCode" Type="Model1.Store.PropertyPropertyCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyPropertyCode">
+        <PropertyRef Name="Properties_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropertyPropertyCode_PropertyCode">
+    <End Role="PropertyPropertyCode" Type="Model1.Store.PropertyPropertyCode" Multiplicity="*" />
+    <End Role="PropertyCode" Type="Model1.Store.PropertyCodes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyCode">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyPropertyCode">
+        <PropertyRef Name="PropertyCodes_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Model1.User" />
+          <EntitySet Name="Movies" EntityType="Model1.Movie" />
+          <EntitySet Name="Photos" EntityType="Model1.Photo" />
+          <EntitySet Name="PropertyCodes" EntityType="Model1.PropertyCode" />
+          <EntitySet Name="Properties" EntityType="Model1.Property" />
+          <AssociationSet Name="PropertyMovie" Association="Model1.PropertyMovie">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="Movie" EntitySet="Movies" />
+          </AssociationSet>
+          <AssociationSet Name="PropertyPhoto" Association="Model1.PropertyPhoto">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="Photo" EntitySet="Photos" />
+          </AssociationSet>
+          <AssociationSet Name="PropertyPropertyCode" Association="Model1.PropertyPropertyCode">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="PropertyCode" EntitySet="PropertyCodes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="Phone" Type="String" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Movie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullPath" Type="String" Nullable="false" />
+          <Property Name="MovieName" Type="String" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+          <Property Name="Event" Type="String" Nullable="false" />
+          <Property Name="TaggedPersons" Type="String" Nullable="false" />
+          <Property Name="Location" Type="String" Nullable="false" />
+          <Property Name="FlgMoved" Type="Boolean" Nullable="false" />
+          <Property Name="Duration" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Property" Relationship="Model1.PropertyMovie" FromRole="Movie" ToRole="Property" />
+          <Property Name="PropertyID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullPath" Type="String" Nullable="false" />
+          <Property Name="PhotoName" Type="String" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+          <Property Name="Event" Type="String" Nullable="false" />
+          <Property Name="TaggedPersons" Type="String" Nullable="false" />
+          <Property Name="Location" Type="String" Nullable="false" />
+          <Property Name="FlgMoved" Type="Boolean" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Property" Relationship="Model1.PropertyPhoto" FromRole="Photo" ToRole="Property" />
+          <Property Name="PropertyID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyCode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" />
+          <NavigationProperty Name="Properties" Relationship="Model1.PropertyPropertyCode" FromRole="PropertyCode" ToRole="Property" />
+        </EntityType>
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Movies" Relationship="Model1.PropertyMovie" FromRole="Property" ToRole="Movie" />
+          <NavigationProperty Name="Photos" Relationship="Model1.PropertyPhoto" FromRole="Property" ToRole="Photo" />
+          <NavigationProperty Name="PropertyCodes" Relationship="Model1.PropertyPropertyCode" FromRole="Property" ToRole="PropertyCode" />
+        </EntityType>
+        <Association Name="PropertyMovie">
+          <End Type="Model1.Property" Role="Property" Multiplicity="1" />
+          <End Type="Model1.Movie" Role="Movie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Movie">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PropertyPhoto">
+          <End Type="Model1.Property" Role="Property" Multiplicity="1" />
+          <End Type="Model1.Photo" Role="Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Property">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Photo">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PropertyPropertyCode">
+          <End Type="Model1.Property" Role="Property" Multiplicity="*" />
+          <End Type="Model1.PropertyCode" Role="PropertyCode" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Movie)">
+        <MappingFragment StoreEntitySet="Movies">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FullPath" ColumnName="FullPath" />
+          <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="TaggedPersons" ColumnName="TaggedPersons" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="FlgMoved" ColumnName="FlgMoved" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Photos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Photo)">
+        <MappingFragment StoreEntitySet="Photos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FullPath" ColumnName="FullPath" />
+          <ScalarProperty Name="PhotoName" ColumnName="PhotoName" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="TaggedPersons" ColumnName="TaggedPersons" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="FlgMoved" ColumnName="FlgMoved" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyCodes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.PropertyCode)">
+        <MappingFragment StoreEntitySet="PropertyCodes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Properties">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Property)">
+        <MappingFragment StoreEntitySet="Properties">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PropertyPropertyCode" TypeName="Model1.PropertyPropertyCode" StoreEntitySet="PropertyPropertyCode">
+      <EndProperty Name="Property">
+        <ScalarProperty Name="ID" ColumnName="Properties_ID" />
+      </EndProperty>
+      <EndProperty Name="PropertyCode">
+        <ScalarProperty Name="ID" ColumnName="PropertyCodes_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
