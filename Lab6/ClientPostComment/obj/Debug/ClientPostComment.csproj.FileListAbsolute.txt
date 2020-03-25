@@ -1,0 +1,14 @@
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\obj\Debug\ClientPostComment.csprojAssemblyReference.cache
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\obj\Debug\ClientPostComment.Form1.resources
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\obj\Debug\ClientPostComment.Properties.Resources.resources
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\obj\Debug\ClientPostComment.csproj.GenerateResource.cache
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\bin\Debug\ClientPostComment.exe.config
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\bin\Debug\ClientPostComment.exe
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\bin\Debug\ClientPostComment.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\bin\Debug\System.IO.Packaging.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\bin\Debug\System.IO.Packaging.xml
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\obj\Debug\ClientPostComment.csproj.CopyComplete
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\obj\Debug\ClientPostComment.exe
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\ClientPostComment\obj\Debug\ClientPostComment.pdb

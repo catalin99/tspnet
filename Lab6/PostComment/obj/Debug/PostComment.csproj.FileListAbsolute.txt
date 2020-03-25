@@ -1,0 +1,11 @@
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\PostComment.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\PostComment.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\obj\Debug\PostComment.csprojAssemblyReference.cache
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\obj\Debug\PostComment.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\obj\Debug\PostComment.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\PostComment.dll.config
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\EntityFramework.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\EntityFramework.SqlServer.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\EntityFramework.xml
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\EntityFramework.SqlServer.xml
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\obj\Debug\PostComment.csproj.CopyComplete
