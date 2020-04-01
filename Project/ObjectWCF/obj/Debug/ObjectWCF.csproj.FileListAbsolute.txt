@@ -1,0 +1,1 @@
+C:\Faculty\tspnet\projStandard\ObjectWCF\obj\Debug\ObjectWCF.csprojAssemblyReference.cache

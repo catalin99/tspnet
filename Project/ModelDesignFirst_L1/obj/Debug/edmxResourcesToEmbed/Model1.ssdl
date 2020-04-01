@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Users" EntityType="Model1.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Movies" EntityType="Model1.Store.Movies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Photos" EntityType="Model1.Store.Photos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropertyCodes" EntityType="Model1.Store.PropertyCodes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Properties" EntityType="Model1.Store.Properties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropertyPropertyCode" EntityType="Model1.Store.PropertyPropertyCode" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PropertyMovie" Association="Model1.Store.PropertyMovie">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Movie" EntitySet="Movies" />
+    </AssociationSet>
+    <AssociationSet Name="PropertyPhoto" Association="Model1.Store.PropertyPhoto">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="Photo" EntitySet="Photos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropertyPropertyCode_Property" Association="Model1.Store.FK_PropertyPropertyCode_Property">
+      <End Role="Property" EntitySet="Properties" />
+      <End Role="PropertyPropertyCode" EntitySet="PropertyPropertyCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropertyPropertyCode_PropertyCode" Association="Model1.Store.FK_PropertyPropertyCode_PropertyCode">
+      <End Role="PropertyCode" EntitySet="PropertyCodes" />
+      <End Role="PropertyPropertyCode" EntitySet="PropertyPropertyCode" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Movies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MovieName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="Event" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TaggedPersons" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FlgMoved" Type="bit" Nullable="false" />
+    <Property Name="Duration" Type="int" Nullable="false" />
+    <Property Name="PropertyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Photos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhotoName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="Event" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TaggedPersons" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FlgMoved" Type="bit" Nullable="false" />
+    <Property Name="Height" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="int" Nullable="false" />
+    <Property Name="PropertyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyCodes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Properties">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropertyPropertyCode">
+    <Key>
+      <PropertyRef Name="Properties_ID" />
+      <PropertyRef Name="PropertyCodes_ID" />
+    </Key>
+    <Property Name="Properties_ID" Type="int" Nullable="false" />
+    <Property Name="PropertyCodes_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PropertyMovie">
+    <End Role="Property" Type="Model1.Store.Properties" Multiplicity="1" />
+    <End Role="Movie" Type="Model1.Store.Movies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Movie">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PropertyPhoto">
+    <End Role="Property" Type="Model1.Store.Properties" Multiplicity="1" />
+    <End Role="Photo" Type="Model1.Store.Photos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropertyPropertyCode_Property">
+    <End Role="Property" Type="Model1.Store.Properties" Multiplicity="1" />
+    <End Role="PropertyPropertyCode" Type="Model1.Store.PropertyPropertyCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Property">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyPropertyCode">
+        <PropertyRef Name="Properties_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropertyPropertyCode_PropertyCode">
+    <End Role="PropertyPropertyCode" Type="Model1.Store.PropertyPropertyCode" Multiplicity="*" />
+    <End Role="PropertyCode" Type="Model1.Store.PropertyCodes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyCode">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyPropertyCode">
+        <PropertyRef Name="PropertyCodes_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

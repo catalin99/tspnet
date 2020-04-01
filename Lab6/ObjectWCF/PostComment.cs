@@ -73,7 +73,7 @@ namespace ObjectWCF
             Console.WriteLine("GetPostById. Id = {0}", id);
             post = post.GetPostById(id); // Neclar acest cod.
             Console.WriteLine("Post returnat. Id = {0} , Description = {1}",
-           post.PostId, post.Description);
+            post.PostId, post.Description);
             return post;
         }
         List<Post> InterfacePost.GetPosts()

@@ -1,0 +1,5 @@
+In cadrul laboratorului de astazi am adaugat pentru proiect urmatoarele:
+- Proiectul ObjectWCF cu interfetele pentru entitatile Movie, Photo si User.
+- Folder API in proiectul ModelDesignFirst_L1 care reprezinta API-ul cu operatiile CRUD asupra entitatilor Movie, Photo, User.
+
+Catalin Belu, MI 16.
