@@ -18,3 +18,22 @@ C:\Faculty\tspnet\formstandard\obj\Debug\formstandard.csproj.GenerateResource.ca
 C:\Faculty\tspnet\formstandard\obj\Debug\formstandard.csproj.CopyComplete
 C:\Faculty\tspnet\formstandard\obj\Debug\formstandard.exe
 C:\Faculty\tspnet\formstandard\obj\Debug\formstandard.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\formstandard.exe.config
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\formstandard.exe
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\formstandard.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\ModelDesignFirst_L1.exe
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\ModelDesignFirst_L1.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\ModelDesignFirst_L1.exe.config
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\EntityFramework.xml
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\EntityFramework.SqlServer.xml
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.csprojAssemblyReference.cache
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.Property.resources
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.User.resources
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.Movie.resources
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.Photo.resources
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.Properties.Resources.resources
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.csproj.GenerateResource.cache
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.csproj.CoreCompileInputs.cache
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.csproj.CopyComplete
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.exe
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.pdb

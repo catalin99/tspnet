@@ -117,7 +117,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\projStandard\ModelDesignFirst_L1\ModelDesignFirst_L1.csproj">
+    <ProjectReference Include="..\ModelDesignFirst_L1\ModelDesignFirst_L1.csproj">
       <Project>{3b1b0c08-b7f2-4ba4-86d7-19f0c1559da8}</Project>
       <Name>ModelDesignFirst_L1</Name>
     </ProjectReference>

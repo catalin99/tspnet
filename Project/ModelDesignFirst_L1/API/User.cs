@@ -10,7 +10,7 @@ namespace ModelDesignFirst_L1
     {
         public bool DeleteUser(int id)
         {
-            using(Model1Container ctx = new Model1Container())
+            using (Model1Container ctx = new Model1Container())
             {
                 var user = ctx.Users.FirstOrDefault(u => u.ID == id);
                 if (user != default(User))
@@ -28,7 +28,7 @@ namespace ModelDesignFirst_L1
             using (Model1Container ctx = new Model1Container())
             {
                 var user = ctx.Users.FirstOrDefault(u => u.ID == id);
-                if(user != default(User))
+                if (user != default(User))
                     return user;
                 return null;
             }
@@ -57,6 +57,7 @@ namespace ModelDesignFirst_L1
                 ctx.SaveChanges();
                 return user;
             }
+        }
+
     }
-    
 }
