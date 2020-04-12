@@ -59,5 +59,27 @@ namespace ModelDesignFirst_L1
                 return Photo;
             }
         }
+
+        public Photo CreatePhoto(string fullPath, string PhotoName, DateTime creationDate, string corelatedEvent, string taggedPersons, string location, int height, int weight)
+        {
+            using (Model1Container ctx = new Model1Container())
+            {
+                Photo photo = new Photo()
+                {
+                    ID = new Random().Next(1,10000),
+                    FullPath = fullPath,
+                    PhotoName = PhotoName,
+                    CreationDate = creationDate,
+                    Event = corelatedEvent,
+                    TaggedPersons = taggedPersons,
+                    Location = location,
+                    Height = height,
+                    Weight = weight
+                };
+                ctx.Photos.Add(photo);
+                ctx.SaveChanges();
+                return photo;
+            }
+        }
     }
 }

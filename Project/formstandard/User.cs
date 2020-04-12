@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ObjectWCF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,11 +35,8 @@ namespace formstandard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ModelDesignFirst_L1.User user = ModelDesignFirst_L1.User.CreateUser(
+            new MyPhotos().CreateUser(
                 textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
-            ModelDesignFirst_L1.Model1Container context = new ModelDesignFirst_L1.Model1Container();
-            context.Users.Add(user);
-            context.SaveChanges();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

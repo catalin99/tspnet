@@ -58,6 +58,25 @@ namespace ModelDesignFirst_L1
                 return user;
             }
         }
+        public User CreateUser(string firstName, string lastName, string email, string password, string phone, string address)
+        {
+            using (Model1Container ctx = new Model1Container())
+            {
+                User user = new User()
+                {
+                    ID = new Random().Next(1,20000),
+                    FirstName = firstName,
+                    LastName = lastName,
+                    Email = email,
+                    Password = password,
+                    Phone = phone,
+                    Address = address,
+                };
+                ctx.Users.Add(user);
+                ctx.SaveChanges();
+                return user;
+            }
+        }
 
     }
 }

@@ -11,40 +11,15 @@ namespace ModelDesignFirst_L1
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-
-    [DataContract(IsReference = true)]
+    
     public partial class User
     {
-        [DataMember]
         public int ID { get; set; }
-        [DataMember]
         public string FirstName { get; set; }
-        [DataMember]
         public string LastName { get; set; }
-        [DataMember]
         public string Email { get; set; }
-        [DataMember]
         public string Password { get; set; }
-        [DataMember]
         public string Phone { get; set; }
-        [DataMember]
         public string Address { get; set; }
-
-        public static User CreateUser(string firstName, string lastName, string email, string password, string phone, string address)
-        {
-            return new User
-            {
-                ID = new Random().Next(1, 10000),
-                FirstName = firstName,
-                LastName = lastName,
-                Email = email,
-                Password = password,
-                Phone = phone,
-                Address = address
-            };
-        }
     }
-
-    
 }

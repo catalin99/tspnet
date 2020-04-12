@@ -121,6 +121,10 @@
       <Project>{3b1b0c08-b7f2-4ba4-86d7-19f0c1559da8}</Project>
       <Name>ModelDesignFirst_L1</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ObjectWCF\ObjectWCF.csproj">
+      <Project>{c7284d7c-bb15-4417-9121-f2dc6c3844d7}</Project>
+      <Name>ObjectWCF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjTspNet\ModelProj.csproj">
       <Project>{6d00b44b-0eef-49d1-a94b-4db0e4f74201}</Project>
       <Name>ModelProj</Name>

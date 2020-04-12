@@ -11,22 +11,9 @@
     <EntitySet Name="Photos" EntityType="Model1.Store.Photos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PropertyCodes" EntityType="Model1.Store.PropertyCodes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Properties" EntityType="Model1.Store.Properties" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PropertyPropertyCode" EntityType="Model1.Store.PropertyPropertyCode" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="PropertyMovie" Association="Model1.Store.PropertyMovie">
+    <AssociationSet Name="DescToCode" Association="Model1.Store.DescToCode">
       <End Role="Property" EntitySet="Properties" />
-      <End Role="Movie" EntitySet="Movies" />
-    </AssociationSet>
-    <AssociationSet Name="PropertyPhoto" Association="Model1.Store.PropertyPhoto">
-      <End Role="Property" EntitySet="Properties" />
-      <End Role="Photo" EntitySet="Photos" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PropertyPropertyCode_Property" Association="Model1.Store.FK_PropertyPropertyCode_Property">
-      <End Role="Property" EntitySet="Properties" />
-      <End Role="PropertyPropertyCode" EntitySet="PropertyPropertyCode" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PropertyPropertyCode_PropertyCode" Association="Model1.Store.FK_PropertyPropertyCode_PropertyCode">
       <End Role="PropertyCode" EntitySet="PropertyCodes" />
-      <End Role="PropertyPropertyCode" EntitySet="PropertyPropertyCode" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Users">
@@ -54,7 +41,6 @@
     <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
     <Property Name="FlgMoved" Type="bit" Nullable="false" />
     <Property Name="Duration" Type="int" Nullable="false" />
-    <Property Name="PropertyID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Photos">
     <Key>
@@ -70,7 +56,6 @@
     <Property Name="FlgMoved" Type="bit" Nullable="false" />
     <Property Name="Height" Type="int" Nullable="false" />
     <Property Name="Weight" Type="int" Nullable="false" />
-    <Property Name="PropertyID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PropertyCodes">
     <Key>
@@ -84,60 +69,19 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PropertyCodeID" Type="int" Nullable="false" />
+    <Property Name="MediaID" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="PropertyPropertyCode">
-    <Key>
-      <PropertyRef Name="Properties_ID" />
-      <PropertyRef Name="PropertyCodes_ID" />
-    </Key>
-    <Property Name="Properties_ID" Type="int" Nullable="false" />
-    <Property Name="PropertyCodes_ID" Type="int" Nullable="false" />
-  </EntityType>
-  <Association Name="PropertyMovie">
-    <End Role="Property" Type="Model1.Store.Properties" Multiplicity="1" />
-    <End Role="Movie" Type="Model1.Store.Movies" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Property">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Movie">
-        <PropertyRef Name="PropertyID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PropertyPhoto">
-    <End Role="Property" Type="Model1.Store.Properties" Multiplicity="1" />
-    <End Role="Photo" Type="Model1.Store.Photos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Property">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Photo">
-        <PropertyRef Name="PropertyID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PropertyPropertyCode_Property">
-    <End Role="Property" Type="Model1.Store.Properties" Multiplicity="1" />
-    <End Role="PropertyPropertyCode" Type="Model1.Store.PropertyPropertyCode" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Property">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="PropertyPropertyCode">
-        <PropertyRef Name="Properties_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PropertyPropertyCode_PropertyCode">
-    <End Role="PropertyPropertyCode" Type="Model1.Store.PropertyPropertyCode" Multiplicity="*" />
+  <Association Name="DescToCode">
+    <End Role="Property" Type="Model1.Store.Properties" Multiplicity="*" />
     <End Role="PropertyCode" Type="Model1.Store.PropertyCodes" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="PropertyCode">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="PropertyPropertyCode">
-        <PropertyRef Name="PropertyCodes_ID" />
+      <Dependent Role="Property">
+        <PropertyRef Name="PropertyCodeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -151,15 +95,7 @@
           <EntitySet Name="Photos" EntityType="Model1.Photo" />
           <EntitySet Name="PropertyCodes" EntityType="Model1.PropertyCode" />
           <EntitySet Name="Properties" EntityType="Model1.Property" />
-          <AssociationSet Name="PropertyMovie" Association="Model1.PropertyMovie">
-            <End Role="Property" EntitySet="Properties" />
-            <End Role="Movie" EntitySet="Movies" />
-          </AssociationSet>
-          <AssociationSet Name="PropertyPhoto" Association="Model1.PropertyPhoto">
-            <End Role="Property" EntitySet="Properties" />
-            <End Role="Photo" EntitySet="Photos" />
-          </AssociationSet>
-          <AssociationSet Name="PropertyPropertyCode" Association="Model1.PropertyPropertyCode">
+          <AssociationSet Name="DescToCode" Association="Model1.DescToCode">
             <End Role="Property" EntitySet="Properties" />
             <End Role="PropertyCode" EntitySet="PropertyCodes" />
           </AssociationSet>
@@ -189,8 +125,6 @@
           <Property Name="Location" Type="String" Nullable="false" />
           <Property Name="FlgMoved" Type="Boolean" Nullable="false" />
           <Property Name="Duration" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Property" Relationship="Model1.PropertyMovie" FromRole="Movie" ToRole="Property" />
-          <Property Name="PropertyID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Photo">
           <Key>
@@ -206,8 +140,6 @@
           <Property Name="FlgMoved" Type="Boolean" Nullable="false" />
           <Property Name="Height" Type="Int32" Nullable="false" />
           <Property Name="Weight" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Property" Relationship="Model1.PropertyPhoto" FromRole="Photo" ToRole="Property" />
-          <Property Name="PropertyID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="PropertyCode">
           <Key>
@@ -215,44 +147,29 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Code" Type="String" Nullable="false" />
-          <NavigationProperty Name="Properties" Relationship="Model1.PropertyPropertyCode" FromRole="PropertyCode" ToRole="Property" />
+          <NavigationProperty Name="Properties" Relationship="Model1.DescToCode" FromRole="PropertyCode" ToRole="Property" />
         </EntityType>
         <EntityType Name="Property">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Movies" Relationship="Model1.PropertyMovie" FromRole="Property" ToRole="Movie" />
-          <NavigationProperty Name="Photos" Relationship="Model1.PropertyPhoto" FromRole="Property" ToRole="Photo" />
-          <NavigationProperty Name="PropertyCodes" Relationship="Model1.PropertyPropertyCode" FromRole="Property" ToRole="PropertyCode" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <NavigationProperty Name="PropertyCode" Relationship="Model1.DescToCode" FromRole="Property" ToRole="PropertyCode" />
+          <Property Name="PropertyCodeID" Type="Int32" Nullable="false" />
+          <Property Name="MediaID" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="PropertyMovie">
-          <End Type="Model1.Property" Role="Property" Multiplicity="1" />
-          <End Type="Model1.Movie" Role="Movie" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Property">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Movie">
-              <PropertyRef Name="PropertyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="PropertyPhoto">
-          <End Type="Model1.Property" Role="Property" Multiplicity="1" />
-          <End Type="Model1.Photo" Role="Photo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Property">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Photo">
-              <PropertyRef Name="PropertyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="PropertyPropertyCode">
+        <Association Name="DescToCode">
           <End Type="Model1.Property" Role="Property" Multiplicity="*" />
-          <End Type="Model1.PropertyCode" Role="PropertyCode" Multiplicity="*" />
+          <End Type="Model1.PropertyCode" Role="PropertyCode" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyCode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Property">
+              <PropertyRef Name="PropertyCodeID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -285,7 +202,6 @@
           <ScalarProperty Name="Location" ColumnName="Location" />
           <ScalarProperty Name="FlgMoved" ColumnName="FlgMoved" />
           <ScalarProperty Name="Duration" ColumnName="Duration" />
-          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -302,7 +218,6 @@
           <ScalarProperty Name="FlgMoved" ColumnName="FlgMoved" />
           <ScalarProperty Name="Height" ColumnName="Height" />
           <ScalarProperty Name="Weight" ColumnName="Weight" />
-          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -318,17 +233,12 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model1.Property)">
         <MappingFragment StoreEntitySet="Properties">
           <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PropertyCodeID" ColumnName="PropertyCodeID" />
+          <ScalarProperty Name="MediaID" ColumnName="MediaID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="PropertyPropertyCode" TypeName="Model1.PropertyPropertyCode" StoreEntitySet="PropertyPropertyCode">
-      <EndProperty Name="Property">
-        <ScalarProperty Name="ID" ColumnName="Properties_ID" />
-      </EndProperty>
-      <EndProperty Name="PropertyCode">
-        <ScalarProperty Name="ID" ColumnName="PropertyCodes_ID" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

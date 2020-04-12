@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="API\Movie.cs" />
     <Compile Include="API\Photo.cs" />
+    <Compile Include="API\Property.cs" />
+    <Compile Include="API\PropertyCode.cs" />
     <Compile Include="API\User.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>

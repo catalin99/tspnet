@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ObjectWCF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -99,11 +100,9 @@ namespace formstandard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ModelDesignFirst_L1.Movie movie = ModelDesignFirst_L1.Movie.CreateMovie(
-                textBox1.Text, textBox2.Text, DateTime.Parse(textBox3.Text), textBox4.Text, textBox5.Text, textBox6.Text, Int32.Parse(textBox7.Text));
-            ModelDesignFirst_L1.Model1Container context = new ModelDesignFirst_L1.Model1Container();
-            context.Movies.Add(movie);
-            context.SaveChanges();
+            new MyPhotos().CreateMovie(
+                textBox2.Text, textBox1.Text, DateTime.Parse(textBox3.Text), 
+                textBox4.Text, textBox5.Text, textBox6.Text, Int32.Parse(textBox7.Text));
         }
     }
 }

@@ -14,32 +14,11 @@ namespace ModelDesignFirst_L1
     
     public partial class Property
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Property()
-        {
-            this.Movies = new HashSet<Movie>();
-            this.Photos = new HashSet<Photo>();
-            this.PropertyCodes = new HashSet<PropertyCode>();
-        }
-    
         public int ID { get; set; }
+        public string Description { get; set; }
+        public int PropertyCodeID { get; set; }
+        public int MediaID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Movie> Movies { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Photo> Photos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PropertyCode> PropertyCodes { get; set; }
-
-        public static Property CreateProperty(ICollection<Movie> movies, ICollection<Photo> photos, ICollection<PropertyCode> propertyCodes)
-        {
-            return new Property
-            {
-                ID = new Random().Next(1,20000),
-                Movies = movies,
-                Photos = photos,
-                PropertyCodes = propertyCodes
-            };
-        }
+        public virtual PropertyCode PropertyCode { get; set; }
     }
 }

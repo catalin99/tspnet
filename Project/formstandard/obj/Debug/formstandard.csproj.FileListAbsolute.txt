@@ -37,3 +37,5 @@ C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.csproj.CopyComplete
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.exe
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\ObjectWCF.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\ObjectWCF.pdb

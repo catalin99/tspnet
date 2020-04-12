@@ -52,7 +52,23 @@ namespace ObjectWCF
     }
 
     [ServiceContract]
-    interface IProject : InterfaceUser, InterfacePhoto, InterfaceMovie
+    interface InterfacePropertyCode
+    {
+        [OperationContract]
+        PropertyCode CreatePropertyCode(string code);
+        [OperationContract]
+        bool DeletePropertyCode(int id);
+        [OperationContract]
+        List<PropertyCode> GetPropertyCodes();
+    }
+    [ServiceContract]
+    interface InterfaceProperty
+    {
+        [OperationContract]
+        Property CreateProperty(string desc, int mediaID, int propCodeID);
+    }
+    [ServiceContract]
+    interface IProject : InterfaceUser, InterfacePhoto, InterfaceMovie, InterfacePropertyCode, InterfaceProperty
     {
     }
 }

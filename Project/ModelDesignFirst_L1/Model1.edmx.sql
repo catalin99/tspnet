@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/09/2020 20:45:28
--- Generated from EDMX file: C:\Faculty\tspnet\projStandard\ModelDesignFirst_L1\Model1.edmx
+-- Date Created: 04/12/2020 21:53:22
+-- Generated from EDMX file: C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ModelDesignFirst_L1\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,11 +17,32 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_PropertyMovie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Movies] DROP CONSTRAINT [FK_PropertyMovie];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PropertyPhoto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Photos] DROP CONSTRAINT [FK_PropertyPhoto];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Users];
+GO
+IF OBJECT_ID(N'[dbo].[Movies]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Movies];
+GO
+IF OBJECT_ID(N'[dbo].[Photos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Photos];
+GO
+IF OBJECT_ID(N'[dbo].[PropertyCodes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PropertyCodes];
+GO
+IF OBJECT_ID(N'[dbo].[Properties]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Properties];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -49,8 +70,7 @@ CREATE TABLE [dbo].[Movies] (
     [TaggedPersons] nvarchar(max)  NOT NULL,
     [Location] nvarchar(max)  NOT NULL,
     [FlgMoved] bit  NOT NULL,
-    [Duration] int  NOT NULL,
-    [PropertyID] int  NOT NULL
+    [Duration] int  NOT NULL
 );
 GO
 
@@ -65,8 +85,7 @@ CREATE TABLE [dbo].[Photos] (
     [Location] nvarchar(max)  NOT NULL,
     [FlgMoved] bit  NOT NULL,
     [Height] int  NOT NULL,
-    [Weight] int  NOT NULL,
-    [PropertyID] int  NOT NULL
+    [Weight] int  NOT NULL
 );
 GO
 
@@ -79,14 +98,10 @@ GO
 
 -- Creating table 'Properties'
 CREATE TABLE [dbo].[Properties] (
-    [ID] int IDENTITY(1,1) NOT NULL
-);
-GO
-
--- Creating table 'PropertyPropertyCode'
-CREATE TABLE [dbo].[PropertyPropertyCode] (
-    [Properties_ID] int  NOT NULL,
-    [PropertyCodes_ID] int  NOT NULL
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Description] nvarchar(max)  NOT NULL,
+    [PropertyCodeID] int  NOT NULL,
+    [MediaID] int  NOT NULL
 );
 GO
 
@@ -124,68 +139,23 @@ ADD CONSTRAINT [PK_Properties]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
--- Creating primary key on [Properties_ID], [PropertyCodes_ID] in table 'PropertyPropertyCode'
-ALTER TABLE [dbo].[PropertyPropertyCode]
-ADD CONSTRAINT [PK_PropertyPropertyCode]
-    PRIMARY KEY CLUSTERED ([Properties_ID], [PropertyCodes_ID] ASC);
-GO
-
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [PropertyID] in table 'Movies'
-ALTER TABLE [dbo].[Movies]
-ADD CONSTRAINT [FK_PropertyMovie]
-    FOREIGN KEY ([PropertyID])
-    REFERENCES [dbo].[Properties]
-        ([ID])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_PropertyMovie'
-CREATE INDEX [IX_FK_PropertyMovie]
-ON [dbo].[Movies]
-    ([PropertyID]);
-GO
-
--- Creating foreign key on [PropertyID] in table 'Photos'
-ALTER TABLE [dbo].[Photos]
-ADD CONSTRAINT [FK_PropertyPhoto]
-    FOREIGN KEY ([PropertyID])
-    REFERENCES [dbo].[Properties]
-        ([ID])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_PropertyPhoto'
-CREATE INDEX [IX_FK_PropertyPhoto]
-ON [dbo].[Photos]
-    ([PropertyID]);
-GO
-
--- Creating foreign key on [Properties_ID] in table 'PropertyPropertyCode'
-ALTER TABLE [dbo].[PropertyPropertyCode]
-ADD CONSTRAINT [FK_PropertyPropertyCode_Property]
-    FOREIGN KEY ([Properties_ID])
-    REFERENCES [dbo].[Properties]
-        ([ID])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [PropertyCodes_ID] in table 'PropertyPropertyCode'
-ALTER TABLE [dbo].[PropertyPropertyCode]
-ADD CONSTRAINT [FK_PropertyPropertyCode_PropertyCode]
-    FOREIGN KEY ([PropertyCodes_ID])
+-- Creating foreign key on [PropertyCodeID] in table 'Properties'
+ALTER TABLE [dbo].[Properties]
+ADD CONSTRAINT [FK_DescToCode]
+    FOREIGN KEY ([PropertyCodeID])
     REFERENCES [dbo].[PropertyCodes]
         ([ID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_PropertyPropertyCode_PropertyCode'
-CREATE INDEX [IX_FK_PropertyPropertyCode_PropertyCode]
-ON [dbo].[PropertyPropertyCode]
-    ([PropertyCodes_ID]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_DescToCode'
+CREATE INDEX [IX_FK_DescToCode]
+ON [dbo].[Properties]
+    ([PropertyCodeID]);
 GO
 
 -- --------------------------------------------------

@@ -19,20 +19,18 @@ namespace ModelDesignFirst_L1
         {
             this.Properties = new HashSet<Property>();
         }
+
+        public PropertyCode(string code)
+        {
+            this.ID = new Random().Next(1,30000);
+            this.Properties = new HashSet<Property>();
+            this.Code = code;
+        }
     
         public int ID { get; set; }
         public string Code { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Property> Properties { get; set; }
-
-        public static PropertyCode CreatePropertyCode(string code)
-        {
-            return new PropertyCode
-            {
-                ID = new Random().Next(1,5000),
-                Code = code
-            };
-        }
     }
 }

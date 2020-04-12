@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ObjectWCF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,11 +40,8 @@ namespace formstandard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ModelDesignFirst_L1.Photo photo = ModelDesignFirst_L1.Photo.CreatePhoto(
-                textBox1.Text, textBox2.Text, DateTime.Parse(textBox3.Text), textBox4.Text, textBox5.Text, textBox6.Text, Int32.Parse(textBox7.Text), Int32.Parse(textBox8.Text));
-            ModelDesignFirst_L1.Model1Container context = new ModelDesignFirst_L1.Model1Container();
-            context.Photos.Add(photo);
-            context.SaveChanges();
+            new MyPhotos().CreatePhoto(
+                textBox2.Text, textBox1.Text, DateTime.Parse(textBox3.Text), textBox4.Text, textBox5.Text, textBox6.Text, Int32.Parse(textBox7.Text), Int32.Parse(textBox8.Text));
         }
     }
 }

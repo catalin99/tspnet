@@ -11,49 +11,17 @@ namespace ModelDesignFirst_L1
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-
+    
     public partial class Movie
     {
         public int ID { get; set; }
-        [DataMember]
         public string FullPath { get; set; }
-        [DataMember]
         public string MovieName { get; set; }
-        [DataMember]
         public System.DateTime CreationDate { get; set; }
-        [DataMember]
         public string Event { get; set; }
-        [DataMember]
         public string TaggedPersons { get; set; }
-        [DataMember]
         public string Location { get; set; }
-        [DataMember]
         public bool FlgMoved { get; set; }
-        [DataMember]
         public int Duration { get; set; }
-        [DataMember]
-        public int PropertyID { get; set; }
-        [DataMember]
-        public virtual Property Property { get; set; }
-
-        public static Movie CreateMovie(string fullPath, string movieName, DateTime creationDate, string corelatedEvent, string taggedPersons, string location, int duration)
-        {
-
-            return new Movie
-            {
-                ID = new Random().Next(1, 20000),
-                FullPath = fullPath,
-                MovieName = movieName,
-                CreationDate = creationDate,
-                Event = corelatedEvent,
-                TaggedPersons = taggedPersons,
-                Location = location,
-                Duration = duration,
-                FlgMoved = false,
-                PropertyID = 11,
-                Property = Property.CreateProperty(null, null, null)
-            };
-        }
     }
 }

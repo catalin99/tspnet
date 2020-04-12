@@ -11,17 +11,27 @@ namespace ObjectWCF
     {
         public Photo CreatePhoto(string fullPath, string photoName, DateTime creationDate, string corelatedEvent, string taggedPersons, string location, int height, int weight)
         {
-            return Photo.CreatePhoto(fullPath, photoName, creationDate, corelatedEvent, taggedPersons, location, height, weight);
+            return new Photo().CreatePhoto(fullPath, photoName, creationDate, corelatedEvent, taggedPersons, location, height, weight);
         }
 
         public Movie CreateMovie(string fullPath, string movieName, DateTime creationDate, string corelatedEvent, string taggedPersons, string location, int duration)
         {
-            return Movie.CreateMovie(fullPath, movieName, creationDate, corelatedEvent, taggedPersons, location, duration);
+            return new Movie().CreateMovie(fullPath, movieName, creationDate, corelatedEvent, taggedPersons, location, duration);
         }
 
         public User CreateUser(string firstName, string lastName, string email, string password, string phone, string address)
         {
-            return User.CreateUser(firstName, lastName, email, password, phone, address);
+            return new User().CreateUser(firstName, lastName, email, password, phone, address);
+        }
+
+        public PropertyCode CreatePropertyCode(string code)
+        {
+            return new PropertyCode().CreatePropertyCode(code);
+        }
+
+        public Property CreateProperty(string desc, int mediaID, int propCodeID)
+        {
+            return new Property().CreateProperty(desc, mediaID, propCodeID);
         }
 
         public bool DeletePhoto(int id)
@@ -39,6 +49,11 @@ namespace ObjectWCF
             return new Movie().DeleteMovie(id);
         }
 
+        public bool DeletePropertyCode(int id)
+        {
+            return new PropertyCode().DeletePropertyCode(id);
+        }
+
         public List<Photo> GetAllPhotos()
         {
             return new Photo().GetAllPhotos();
@@ -52,6 +67,11 @@ namespace ObjectWCF
         public List<Movie> GetAllMovies()
         {
             return new Movie().GetAllMovies();
+        }
+
+        public List<PropertyCode> GetPropertyCodes()
+        {
+            return new PropertyCode().GetPropertyCodes();
         }
 
         public Photo GetPhotoById(int id)

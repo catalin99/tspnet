@@ -58,5 +58,26 @@ namespace ModelDesignFirst_L1
                 return movie;
             }
         }
+
+        public Movie CreateMovie(string fullPath, string movieName, DateTime creationDate, string corelatedEvent, string taggedPersons, string location, int duration)
+        {
+            using (Model1Container ctx = new Model1Container())
+            {
+                Movie movie = new Movie()
+                {
+                    ID = new Random().Next(1,10000),
+                    FullPath = fullPath,
+                    MovieName = movieName,
+                    CreationDate = creationDate,
+                    Event = corelatedEvent,
+                    TaggedPersons = taggedPersons,
+                    Location = location,
+                    Duration = duration
+                };
+                ctx.Movies.Add(movie);
+                ctx.SaveChanges();
+                return movie;
+            }
+        }
     }
 }

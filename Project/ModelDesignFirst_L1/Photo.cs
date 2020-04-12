@@ -11,53 +11,18 @@ namespace ModelDesignFirst_L1
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-
-    [DataContract(IsReference = true)]
+    
     public partial class Photo
     {
-        [DataMember]
         public int ID { get; set; }
-        [DataMember]
         public string FullPath { get; set; }
-        [DataMember]
         public string PhotoName { get; set; }
-        [DataMember]
         public System.DateTime CreationDate { get; set; }
-        [DataMember]
         public string Event { get; set; }
-        [DataMember]
         public string TaggedPersons { get; set; }
-        [DataMember]
         public string Location { get; set; }
-        [DataMember]
         public bool FlgMoved { get; set; }
-        [DataMember]
         public int Height { get; set; }
-        [DataMember]
         public int Weight { get; set; }
-        [DataMember]
-        public int PropertyID { get; set; }
-        [DataMember]
-        public virtual Property Property { get; set; }
-        public static Photo CreatePhoto(string fullPath, string movieName, DateTime creationDate, string corelatedEvent, string taggedPersons, string location, int height, int weight)
-        {
-
-            return new Photo
-            {
-                ID = new Random().Next(10,10000),
-                FullPath = fullPath,
-                PhotoName = movieName,
-                CreationDate = creationDate,
-                Event = corelatedEvent,
-                TaggedPersons = taggedPersons,
-                Location = location,
-                Height = height,
-                Weight = weight,
-                FlgMoved = false,
-                PropertyID = 11,
-                Property = Property.CreateProperty(null, null, null)
-            };
-        }
     }
 }
