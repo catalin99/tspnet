@@ -15,7 +15,7 @@ namespace ModelDesignFirst_L1
                 var Photo = ctx.Photos.FirstOrDefault(u => u.ID == id);
                 if (Photo != default(Photo))
                 {
-                    ctx.Photos.Remove(Photo);
+                    Photo.FlgMoved = true;
                     ctx.SaveChanges();
                     return true;
                 }
@@ -38,7 +38,7 @@ namespace ModelDesignFirst_L1
         {
             using (Model1Container ctx = new Model1Container())
             {
-                return ctx.Photos.ToList();
+                return ctx.Photos.Where(p=>p.FlgMoved==false).ToList();
             }
         }
 

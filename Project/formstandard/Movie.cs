@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace formstandard
 {
@@ -144,7 +145,13 @@ namespace formstandard
                 var fileName = openFileDialog1.FileName.Split('\\').Last();
                 textBox1.Text = fileName;
                 textBox2.Text = openFileDialog1.FileName;
+                //axWindowsMediaPlayer1.URL = openFileDialog1.FileName;
+                axWindowsMediaPlayer1.Refresh();
             }
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
         }
     }
 }

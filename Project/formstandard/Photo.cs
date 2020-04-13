@@ -16,6 +16,39 @@ namespace formstandard
         public Photo()
         {
             InitializeComponent();
+            AfterInitializeComponent();
+            AddPhotosInList();
+            InitializeEvents();
+        }
+
+        private void AfterInitializeComponent()
+        {
+            textBox1.ReadOnly = true;
+            textBox2.ReadOnly = true;
+        }
+
+        private void AddPhotosInList()
+        {
+            var photos = new MyPhotos().GetAllPhotos();
+            comboBox1.DataSource = photos;
+            comboBox1.DisplayMember = "PhotoName";
+            comboBox1.ValueMember = "FullPath";
+            comboBox2.DataSource = photos;
+            comboBox2.DisplayMember = "PhotoName";
+            comboBox2.ValueMember = "ID";
+        }
+
+        private void InitializeEvents()
+        {
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(UpdatePictureView);
+            
+        }
+
+        private void UpdatePictureView(object sender, System.EventArgs e)
+        {
+            var img = (Image)new Bitmap(Image.FromFile(comboBox1.SelectedValue.ToString()), new Size(pictureBox2.Width, pictureBox2.Height));
+            pictureBox2.Image = img;
+            pictureBox2.Refresh();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,7 +74,91 @@ namespace formstandard
         private void button1_Click(object sender, EventArgs e)
         {
             new MyPhotos().CreatePhoto(
-                textBox2.Text, textBox1.Text, DateTime.Parse(textBox3.Text), textBox4.Text, textBox5.Text, textBox6.Text, Int32.Parse(textBox7.Text), Int32.Parse(textBox8.Text));
+                textBox2.Text, textBox1.Text, dateTimePicker1.Value, textBox4.Text, textBox5.Text, textBox6.Text, Int32.Parse(textBox7.Text), Int32.Parse(textBox8.Text));
+            this.comboBox1.SelectedValueChanged -= UpdatePictureView;
+            AddPhotosInList();
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(UpdatePictureView);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string formats = "All Image Files |*.png; *.jpg; *.jpeg";
+
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                InitialDirectory = @"C:\",
+                Title = "Browse Photo",
+
+                CheckFileExists = true,
+                CheckPathExists = true,
+
+                DefaultExt = "png",
+
+                Filter = formats,
+                FilterIndex = 2,
+                RestoreDirectory = true,
+
+                ReadOnlyChecked = true,
+                ShowReadOnly = true
+            };
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = openFileDialog1.FileName.Split('\\').Last();
+                textBox1.Text = fileName;
+                textBox2.Text = openFileDialog1.FileName;
+                var img = (Image)new Bitmap(Image.FromFile(openFileDialog1.FileName),new Size(pictureBox1.Width, pictureBox1.Height));
+                pictureBox1.Image = img;
+                pictureBox1.Refresh();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new MyPhotos().DeletePhoto(Int32.Parse(comboBox2.SelectedValue.ToString()));
+            this.comboBox1.SelectedValueChanged -= UpdatePictureView;
+            AddPhotosInList();
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(UpdatePictureView);
         }
     }
 }

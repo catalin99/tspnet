@@ -39,3 +39,8 @@ C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.pdb
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\ObjectWCF.dll
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\ObjectWCF.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\Interop.WMPLib.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\AxInterop.WMPLib.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\Interop.WMPLib.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\AxInterop.WMPLib.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.csproj.ResolveComReference.cache
