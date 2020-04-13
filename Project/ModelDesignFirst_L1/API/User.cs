@@ -78,5 +78,19 @@ namespace ModelDesignFirst_L1
             }
         }
 
+        public bool Login(string email, string password)
+        {
+            using (Model1Container ctx = new Model1Container())
+            {
+                var user = ctx.Users.FirstOrDefault(u => u.Email == email);
+                if (user != default(User))
+                {
+                    if (user.Password == password)
+                        return true;
+                }
+                return false;
+            }
+        }
+
     }
 }

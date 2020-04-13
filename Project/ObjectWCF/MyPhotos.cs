@@ -104,5 +104,9 @@ namespace ObjectWCF
             return new User().Update(id, firstName, lastName, email, password, phone, address);
         }
 
+        public bool Login(string email, string password)
+        {
+            return new User().Login(email, password);
+        }
     }
 }

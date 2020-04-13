@@ -21,6 +21,8 @@ namespace ObjectWCF
         User GetUserById(int id);
         [OperationContract]
         List<User> GetAllUsers();
+        [OperationContract]
+        bool Login(string email, string password);
     }
     [ServiceContract]
     interface InterfacePhoto

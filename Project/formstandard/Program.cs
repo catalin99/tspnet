@@ -18,7 +18,8 @@ namespace formstandard
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new User());
             //Application.Run(new Photo());
-            Application.Run(new Property());
+            //Application.Run(new Property());
+            Application.Run(new Movie());
         }
     }
 }

@@ -16,6 +16,14 @@ namespace formstandard
         public User()
         {
             InitializeComponent();
+            InitializePasswordType();
+        }
+
+        private void InitializePasswordType()
+        {
+            textBox4.Text = "";
+            textBox4.PasswordChar = '*';
+            textBox4.MaxLength = 15;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -40,6 +48,30 @@ namespace formstandard
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (new MyPhotos().Login(textBox7.Text, textBox8.Text))
+                label9.Text = "Succes";
+            else
+                label9.Text = "Fail";
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }

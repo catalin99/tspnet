@@ -18,17 +18,22 @@ namespace formstandard
         {
             InitializeComponent();
             AfterInitializeComponent();
+            InitializeEvents();
         }
 
         public void AfterInitializeComponent()
         {
-            //comboBox1.Items.Add("Movie");
-            //comboBox1.Items.Add("Photo");
             var propertyCodes = new MyPhotos().GetPropertyCodes();
             comboBox2.DataSource = propertyCodes;
             comboBox2.DisplayMember = "Code";
             comboBox2.ValueMember = "ID";
         }
+
+        public void InitializeEvents()
+        {
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(UpdateMedia);
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -51,9 +56,7 @@ namespace formstandard
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            this.comboBox1.SelectedIndexChanged +=
-            new System.EventHandler(UpdateMedia);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,12 +67,16 @@ namespace formstandard
             if (comboBox1.SelectedItem.ToString() == "Photo" || comboBox1.SelectedItem.ToString() == "Movie")
             {
                 new MyPhotos().CreateProperty(description, mediaId, propCode);
+
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             new MyPhotos().CreatePropertyCode(textBox1.Text);
+            AfterInitializeComponent();
+            comboBox2.Refresh();
+
         }
 
         private void label5_Click(object sender, EventArgs e)
