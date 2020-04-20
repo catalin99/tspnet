@@ -1,0 +1,15 @@
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\obj\Debug\HostWCF.csprojAssemblyReference.cache
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\obj\Debug\HostWCF.csproj.CoreCompileInputs.cache
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\HostWCF.exe.config
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\HostWCF.exe
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\HostWCF.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\ObjectWCF.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\ModelDesignFirst_L1.exe
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\EntityFramework.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\ObjectWCF.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\ModelDesignFirst_L1.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\ModelDesignFirst_L1.exe.config
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\EntityFramework.xml
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\obj\Debug\HostWCF.csproj.CopyComplete
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\obj\Debug\HostWCF.exe
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\obj\Debug\HostWCF.pdb
