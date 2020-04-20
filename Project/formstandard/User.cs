@@ -43,7 +43,7 @@ namespace formstandard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new MyPhotos().CreateUser(
+            new ProjectClient().CreateUser(
                 textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
         }
 
@@ -64,7 +64,7 @@ namespace formstandard
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (new MyPhotos().Login(textBox7.Text, textBox8.Text))
+            if (new ProjectClient().Login(textBox7.Text, textBox8.Text))
                 label9.Text = "Succes";
             else
                 label9.Text = "Fail";

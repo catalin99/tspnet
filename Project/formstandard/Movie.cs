@@ -23,19 +23,19 @@ namespace formstandard
 
         private void AddMoviesInList()
         {
-            var movies = new MyPhotos().GetAllMovies();
-            var moviesShow = new MyPhotos().GetAllMovies();
+            var movies = new ProjectClient().GetAllMovies();
+            var moviesShow = new ProjectClient().GetAllMovies();
             comboBox1.DataSource = movies;
             comboBox1.DisplayMember = "MovieName";
             comboBox1.ValueMember = "ID";
-            if (movies.Count == 0)
+            if (movies.Length == 0)
                 comboBox1.Text = "No movies";
 
             comboBox1.Refresh();
             comboBox2.DataSource = moviesShow;
             comboBox2.DisplayMember = "MovieName";
             comboBox2.ValueMember = "FullPath";
-            if (moviesShow.Count == 0)
+            if (moviesShow.Length == 0)
                 comboBox2.Text = "No movies";
             comboBox2.Refresh();
         }
@@ -127,7 +127,7 @@ namespace formstandard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new MyPhotos().CreateMovie(
+            new ProjectClient().CreateMovie(
                 textBox2.Text, textBox1.Text, dateTimePicker1.Value, 
                 textBox4.Text, textBox5.Text, textBox6.Text, Int32.Parse(textBox7.Text));
             AddMoviesInList();
@@ -182,7 +182,7 @@ namespace formstandard
 
         private void button4_Click(object sender, EventArgs e)
         {
-            new MyPhotos().DeleteMovie(Int32.Parse(comboBox1.SelectedValue.ToString()));
+            new ProjectClient().DeleteMovie(Int32.Parse(comboBox1.SelectedValue.ToString()));
             AddMoviesInList();
         }
 
@@ -195,8 +195,7 @@ namespace formstandard
         private void button6_Click(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-            var movie = new MyPhotos().GetMovieById(((ModelDesignFirst_L1.Movie)comboBox2.SelectedItem).ID);
+            var movie = new ProjectClient().GetMovieById(((ModelDesignFirst_L1.Movie)comboBox2.SelectedItem).ID);
             var prop = "Name: " + movie.MovieName;
             prop += "\nCreation Date: " + movie.CreationDate.ToString();
             prop += "\nEvent: " + movie.Event;
@@ -209,10 +208,10 @@ namespace formstandard
         private void button7_Click(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.OK;
-            var movie = new MyPhotos().GetMovieById(((ModelDesignFirst_L1.Movie)comboBox2.SelectedItem).ID);
-            var props = new MyPhotos().GetPropertiesByMediaID(movie.ID);
+            var movie = new ProjectClient().GetMovieById(((ModelDesignFirst_L1.Movie)comboBox2.SelectedItem).ID);
+            var props = new ProjectClient().GetPropertiesByMediaID(movie.ID);
             var msj = "Movie: " + movie.MovieName;
-            var propCodes = new MyPhotos().GetPropertyCodes();
+            var propCodes = new ProjectClient().GetPropertyCodes();
             foreach (var prop in props)
             {
                 var code = propCodes.FirstOrDefault(a => a.ID == prop.PropertyCodeID);

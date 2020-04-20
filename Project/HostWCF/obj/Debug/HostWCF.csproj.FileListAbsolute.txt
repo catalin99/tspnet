@@ -13,3 +13,5 @@ C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\Enti
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\obj\Debug\HostWCF.csproj.CopyComplete
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\obj\Debug\HostWCF.exe
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\obj\Debug\HostWCF.pdb
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\HostWCF\bin\Debug\EntityFramework.SqlServer.xml

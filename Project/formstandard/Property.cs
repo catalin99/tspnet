@@ -23,7 +23,7 @@ namespace formstandard
 
         public void AfterInitializeComponent()
         {
-            var propertyCodes = new MyPhotos().GetPropertyCodes();
+            var propertyCodes = new ProjectClient().GetPropertyCodes();
             comboBox2.DataSource = propertyCodes;
             comboBox2.DisplayMember = "Code";
             comboBox2.ValueMember = "ID";
@@ -68,14 +68,14 @@ namespace formstandard
                 ((ModelDesignFirst_L1.Movie)comboBox3.SelectedItem).ID;
             if (comboBox1.SelectedItem.ToString() == "Photo" || comboBox1.SelectedItem.ToString() == "Movie")
             {
-                new MyPhotos().CreateProperty(description, mediaId, propCode);
+                new ProjectClient().CreateProperty(description, mediaId, propCode);
 
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new MyPhotos().CreatePropertyCode(textBox1.Text);
+            new ProjectClient().CreatePropertyCode(textBox1.Text);
             AfterInitializeComponent();
             comboBox2.Refresh();
 
@@ -100,14 +100,14 @@ namespace formstandard
         {
             if (comboBox1.SelectedItem.ToString() == "Movie")
             {
-                var movies = new MyPhotos().GetAllMovies();
+                var movies = new ProjectClient().GetAllMovies();
                 comboBox3.DataSource = movies;
                 comboBox3.DisplayMember = "MovieName";
                 comboBox3.ValueMember = "ID";
             }
             else if (comboBox1.SelectedItem.ToString() == "Photo")
             {
-                var photos = new MyPhotos().GetAllPhotos();
+                var photos = new ProjectClient().GetAllPhotos();
                 comboBox3.DataSource = photos;
                 comboBox3.DisplayMember = "PhotoName";
                 comboBox3.ValueMember = "ID";
