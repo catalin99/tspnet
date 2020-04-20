@@ -30,10 +30,11 @@ namespace formstandard
         private void AddPhotosInList()
         {
             var photos = new MyPhotos().GetAllPhotos();
+            var photos2 = new MyPhotos().GetAllPhotos();
             comboBox1.DataSource = photos;
             comboBox1.DisplayMember = "PhotoName";
             comboBox1.ValueMember = "FullPath";
-            comboBox2.DataSource = photos;
+            comboBox2.DataSource = photos2;
             comboBox2.DisplayMember = "PhotoName";
             comboBox2.ValueMember = "ID";
         }
@@ -53,7 +54,7 @@ namespace formstandard
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -159,6 +160,49 @@ namespace formstandard
             this.comboBox1.SelectedValueChanged -= UpdatePictureView;
             AddPhotosInList();
             this.comboBox1.SelectedValueChanged += new System.EventHandler(UpdatePictureView);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+            var photo = new MyPhotos().GetPhotoById(((ModelDesignFirst_L1.Photo)comboBox1.SelectedItem).ID);
+            var prop = "Name: " + photo.PhotoName;
+            prop += "\nCreation Date: " + photo.CreationDate.ToString();
+            prop += "\nEvent: " + photo.Event;
+            prop += "\nPersons: " + photo.TaggedPersons;
+            prop += "\nLocations: " + photo.Location;
+            prop += "\nHeight: " + photo.Height;
+            prop += "\nWeight: " + photo.Weight;
+            // Displays the MessageBox.
+            result = MessageBox.Show(prop, "Proprerties", buttons);
+        }
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+            var photo = new MyPhotos().GetPhotoById(((ModelDesignFirst_L1.Photo)comboBox1.SelectedItem).ID);
+            var props  = new MyPhotos().GetPropertiesByMediaID(photo.ID);
+            var msj = "Photo: " + photo.PhotoName;
+            var propCodes = new MyPhotos().GetPropertyCodes();
+            foreach (var prop in props)
+            {
+                var code = propCodes.FirstOrDefault(a => a.ID == prop.PropertyCodeID);
+                msj += "\n" + code.Code + ": " + prop.Description;
+            }
+            MessageBox.Show(msj, "Special Proprieties", buttons);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -108,5 +108,10 @@ namespace ObjectWCF
         {
             return new User().Login(email, password);
         }
+
+        public List<Property> GetPropertiesByMediaID(int id)
+        {
+            return new Property().GetPropertiesByMediaID(id);
+        }
     }
 }

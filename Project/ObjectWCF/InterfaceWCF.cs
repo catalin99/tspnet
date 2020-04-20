@@ -68,6 +68,8 @@ namespace ObjectWCF
     {
         [OperationContract]
         Property CreateProperty(string desc, int mediaID, int propCodeID);
+        [OperationContract]
+        List<Property> GetPropertiesByMediaID(int id);
     }
     [ServiceContract]
     interface IProject : InterfaceUser, InterfacePhoto, InterfaceMovie, InterfacePropertyCode, InterfaceProperty

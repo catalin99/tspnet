@@ -15,7 +15,7 @@ namespace ModelDesignFirst_L1
                 var movie = ctx.Movies.FirstOrDefault(u => u.ID == id);
                 if (movie != default(Movie))
                 {
-                    ctx.Movies.Remove(movie);
+                    movie.FlgMoved = true;
                     ctx.SaveChanges();
                     return true;
                 }
@@ -38,7 +38,7 @@ namespace ModelDesignFirst_L1
         {
             using (Model1Container ctx = new Model1Container())
             {
-                return ctx.Movies.ToList();
+                return ctx.Movies.Where(m => m.FlgMoved == false).ToList();
             }
         }
 

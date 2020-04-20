@@ -63,7 +63,9 @@ namespace formstandard
         {
             int propCode = ((ModelDesignFirst_L1.PropertyCode)comboBox2.SelectedItem).ID;
             string description = textBox2.Text;
-            int mediaId = ((ModelDesignFirst_L1.Photo)comboBox3.SelectedItem).ID;
+            int mediaId = comboBox1.SelectedItem.ToString() == "Photo" ? 
+                ((ModelDesignFirst_L1.Photo)comboBox3.SelectedItem).ID : 
+                ((ModelDesignFirst_L1.Movie)comboBox3.SelectedItem).ID;
             if (comboBox1.SelectedItem.ToString() == "Photo" || comboBox1.SelectedItem.ToString() == "Movie")
             {
                 new MyPhotos().CreateProperty(description, mediaId, propCode);

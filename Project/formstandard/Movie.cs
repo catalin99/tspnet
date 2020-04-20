@@ -18,6 +18,26 @@ namespace formstandard
         {
             InitializeComponent();
             AfterInitializeComponent();
+            AddMoviesInList();
+        }
+
+        private void AddMoviesInList()
+        {
+            var movies = new MyPhotos().GetAllMovies();
+            var moviesShow = new MyPhotos().GetAllMovies();
+            comboBox1.DataSource = movies;
+            comboBox1.DisplayMember = "MovieName";
+            comboBox1.ValueMember = "ID";
+            if (movies.Count == 0)
+                comboBox1.Text = "No movies";
+
+            comboBox1.Refresh();
+            comboBox2.DataSource = moviesShow;
+            comboBox2.DisplayMember = "MovieName";
+            comboBox2.ValueMember = "FullPath";
+            if (moviesShow.Count == 0)
+                comboBox2.Text = "No movies";
+            comboBox2.Refresh();
         }
 
         private void AfterInitializeComponent()
@@ -108,8 +128,9 @@ namespace formstandard
         private void button1_Click(object sender, EventArgs e)
         {
             new MyPhotos().CreateMovie(
-                textBox2.Text, textBox1.Text, DateTime.Parse(textBox3.Text), 
+                textBox2.Text, textBox1.Text, dateTimePicker1.Value, 
                 textBox4.Text, textBox5.Text, textBox6.Text, Int32.Parse(textBox7.Text));
+            AddMoviesInList();
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -145,13 +166,59 @@ namespace formstandard
                 var fileName = openFileDialog1.FileName.Split('\\').Last();
                 textBox1.Text = fileName;
                 textBox2.Text = openFileDialog1.FileName;
-                //axWindowsMediaPlayer1.URL = openFileDialog1.FileName;
-                axWindowsMediaPlayer1.Refresh();
             }
         }
 
-        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
+            if(textBox2.Text!=string.Empty)
+                new WindowsMediaPlayer().openPlayer(textBox2.Text);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new MyPhotos().DeleteMovie(Int32.Parse(comboBox1.SelectedValue.ToString()));
+            AddMoviesInList();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedValue!=null)
+                new WindowsMediaPlayer().openPlayer(comboBox2.SelectedValue.ToString());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+            var movie = new MyPhotos().GetMovieById(((ModelDesignFirst_L1.Movie)comboBox2.SelectedItem).ID);
+            var prop = "Name: " + movie.MovieName;
+            prop += "\nCreation Date: " + movie.CreationDate.ToString();
+            prop += "\nEvent: " + movie.Event;
+            prop += "\nPersons: " + movie.TaggedPersons;
+            prop += "\nLocations: " + movie.Location;
+            prop += "\nDuration: " + movie.Duration;
+            MessageBox.Show(prop, "Properties", buttons);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            var movie = new MyPhotos().GetMovieById(((ModelDesignFirst_L1.Movie)comboBox2.SelectedItem).ID);
+            var props = new MyPhotos().GetPropertiesByMediaID(movie.ID);
+            var msj = "Movie: " + movie.MovieName;
+            var propCodes = new MyPhotos().GetPropertyCodes();
+            foreach (var prop in props)
+            {
+                var code = propCodes.FirstOrDefault(a => a.ID == prop.PropertyCodeID);
+                msj += "\n" + code.Code + ": " + prop.Description;
+            }
+            MessageBox.Show(msj, "Special Properties", buttons);
         }
     }
 }

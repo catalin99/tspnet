@@ -27,5 +27,14 @@ namespace ModelDesignFirst_L1
                 return prop;
             }
         }
+
+        public List<Property> GetPropertiesByMediaID(int id)
+        {
+            using (Model1Container ctx = new Model1Container())
+            {
+                var props = ctx.Properties.Where(a => a.MediaID == id).ToList();
+                return props;
+            }
+        }
     }
 }
