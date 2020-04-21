@@ -208,10 +208,12 @@ namespace formstandard
         private void button7_Click(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.OK;
-            var movie = new ProjectClient().GetMovieById(((ModelDesignFirst_L1.Movie)comboBox2.SelectedItem).ID);
-            var props = new ProjectClient().GetPropertiesByMediaID(movie.ID);
+            var proj = new ProjectClient();
+            var movie = proj.GetMovieById(((ModelDesignFirst_L1.Movie)comboBox2.SelectedItem).ID);
+
+            var props = proj.GetPropertiesByMediaID(movie.ID);
             var msj = "Movie: " + movie.MovieName;
-            var propCodes = new ProjectClient().GetPropertyCodes();
+            var propCodes = proj.GetPropertyCodes();
             foreach (var prop in props)
             {
                 var code = propCodes.FirstOrDefault(a => a.ID == prop.PropertyCodeID);

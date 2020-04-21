@@ -24,8 +24,6 @@ C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\ModelDesignFirst_L1.exe
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\ModelDesignFirst_L1.pdb
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\ModelDesignFirst_L1.exe.config
-C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\EntityFramework.xml
-C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\bin\Debug\EntityFramework.SqlServer.xml
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.csprojAssemblyReference.cache
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.Property.resources
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\formstandard\obj\Debug\formstandard.User.resources
