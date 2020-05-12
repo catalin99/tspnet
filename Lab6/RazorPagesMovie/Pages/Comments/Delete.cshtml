@@ -1,0 +1,34 @@
+﻿@page
+@model RazorPagesMovie.Pages.Comments.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CommentDTO</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CommentDTO.Text)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CommentDTO.Text)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CommentDTO.Post)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CommentDTO.Post.PostId)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="CommentDTO.CommentId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

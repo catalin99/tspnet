@@ -46,6 +46,16 @@ namespace ClientPostComment
             dgc.DataSource = null;
             dgc.DataSource = posts[e.RowIndex].Comments;
         }
+
+        private void dgp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

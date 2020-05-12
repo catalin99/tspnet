@@ -30,26 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgp = new System.Windows.Forms.DataGridView();
-            this.bazaDeDateDataSet = new ClientPostComment.BazaDeDateDataSet();
-            this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.postsTableAdapter = new ClientPostComment.BazaDeDateDataSetTableAdapters.PostsTableAdapter();
             this.postIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.domainDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bazaDeDateDataSet = new ClientPostComment.BazaDeDateDataSet();
+            this.postsTableAdapter = new ClientPostComment.BazaDeDateDataSetTableAdapters.PostsTableAdapter();
             this.dgc = new System.Windows.Forms.DataGridView();
-            this.bazaDeDateDataSet1 = new ClientPostComment.BazaDeDateDataSet1();
-            this.commentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.commentsTableAdapter = new ClientPostComment.BazaDeDateDataSet1TableAdapters.CommentsTableAdapter();
             this.commentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postPostIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bazaDeDateDataSet1 = new ClientPostComment.BazaDeDateDataSet1();
+            this.commentsTableAdapter = new ClientPostComment.BazaDeDateDataSet1TableAdapters.CommentsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bazaDeDateDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bazaDeDateDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bazaDeDateDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bazaDeDateDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgp
@@ -66,20 +66,7 @@
             this.dgp.Name = "dgp";
             this.dgp.Size = new System.Drawing.Size(657, 150);
             this.dgp.TabIndex = 0;
-            // 
-            // bazaDeDateDataSet
-            // 
-            this.bazaDeDateDataSet.DataSetName = "BazaDeDateDataSet";
-            this.bazaDeDateDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // postsBindingSource
-            // 
-            this.postsBindingSource.DataMember = "Posts";
-            this.postsBindingSource.DataSource = this.bazaDeDateDataSet;
-            // 
-            // postsTableAdapter
-            // 
-            this.postsTableAdapter.ClearBeforeFill = true;
+            this.dgp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgp_CellContentClick);
             // 
             // postIdDataGridViewTextBoxColumn
             // 
@@ -106,6 +93,20 @@
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
+            // postsBindingSource
+            // 
+            this.postsBindingSource.DataMember = "Posts";
+            this.postsBindingSource.DataSource = this.bazaDeDateDataSet;
+            // 
+            // bazaDeDateDataSet
+            // 
+            this.bazaDeDateDataSet.DataSetName = "BazaDeDateDataSet";
+            this.bazaDeDateDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // postsTableAdapter
+            // 
+            this.postsTableAdapter.ClearBeforeFill = true;
+            // 
             // dgc
             // 
             this.dgc.AutoGenerateColumns = false;
@@ -119,20 +120,7 @@
             this.dgc.Name = "dgc";
             this.dgc.Size = new System.Drawing.Size(657, 150);
             this.dgc.TabIndex = 1;
-            // 
-            // bazaDeDateDataSet1
-            // 
-            this.bazaDeDateDataSet1.DataSetName = "BazaDeDateDataSet1";
-            this.bazaDeDateDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // commentsBindingSource
-            // 
-            this.commentsBindingSource.DataMember = "Comments";
-            this.commentsBindingSource.DataSource = this.bazaDeDateDataSet1;
-            // 
-            // commentsTableAdapter
-            // 
-            this.commentsTableAdapter.ClearBeforeFill = true;
+            this.dgc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgc_CellContentClick);
             // 
             // commentIdDataGridViewTextBoxColumn
             // 
@@ -153,6 +141,20 @@
             this.postPostIdDataGridViewTextBoxColumn.HeaderText = "PostPostId";
             this.postPostIdDataGridViewTextBoxColumn.Name = "postPostIdDataGridViewTextBoxColumn";
             // 
+            // commentsBindingSource
+            // 
+            this.commentsBindingSource.DataMember = "Comments";
+            this.commentsBindingSource.DataSource = this.bazaDeDateDataSet1;
+            // 
+            // bazaDeDateDataSet1
+            // 
+            this.bazaDeDateDataSet1.DataSetName = "BazaDeDateDataSet1";
+            this.bazaDeDateDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // commentsTableAdapter
+            // 
+            this.commentsTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,11 +166,11 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bazaDeDateDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bazaDeDateDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bazaDeDateDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bazaDeDateDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }

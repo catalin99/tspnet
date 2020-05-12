@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostWCF", "HostWCF\HostWCF.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPostComment", "ClientPostComment\ClientPostComment.csproj", "{0E992EE7-A0C2-41CC-952D-D0E3AA14DF1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesMovie", "RazorPagesMovie\RazorPagesMovie.csproj", "{96F63634-10D8-4BC4-97A1-5713019BB39E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0E992EE7-A0C2-41CC-952D-D0E3AA14DF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E992EE7-A0C2-41CC-952D-D0E3AA14DF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E992EE7-A0C2-41CC-952D-D0E3AA14DF1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96F63634-10D8-4BC4-97A1-5713019BB39E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F63634-10D8-4BC4-97A1-5713019BB39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F63634-10D8-4BC4-97A1-5713019BB39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F63634-10D8-4BC4-97A1-5713019BB39E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

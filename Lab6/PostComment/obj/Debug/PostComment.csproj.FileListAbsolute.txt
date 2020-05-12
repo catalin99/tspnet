@@ -9,3 +9,15 @@ C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\Ent
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\EntityFramework.xml
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\EntityFramework.SqlServer.xml
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\obj\Debug\PostComment.csproj.CopyComplete
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\PostComment.dll.config
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\PostComment.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\PostComment.pdb
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\EntityFramework.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\EntityFramework.SqlServer.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\EntityFramework.xml
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\bin\Debug\EntityFramework.SqlServer.xml
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\obj\Debug\PostComment.csprojAssemblyReference.cache
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\obj\Debug\PostComment.csproj.CoreCompileInputs.cache
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\obj\Debug\PostComment.csproj.CopyComplete
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\obj\Debug\PostComment.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Lab6\PostComment\obj\Debug\PostComment.pdb
