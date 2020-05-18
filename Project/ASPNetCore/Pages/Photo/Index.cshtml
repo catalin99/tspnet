@@ -1,0 +1,84 @@
+﻿@page
+@model ASPNetCore.Pages.Photo.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Photos[0].FullPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photos[0].PhotoName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photos[0].CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photos[0].Event)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photos[0].TaggedPersons)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photos[0].Location)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Photos[0].FlgMoved)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Photos[0].Height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photos[0].Weight)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Photos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullPath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhotoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaggedPersons)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            @*</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlgMoved)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,69 @@
+﻿@page
+@model ASPNetCore.Pages.Movie.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MovieDTO</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MovieDTO.FullPath" class="control-label"></label>
+                <input asp-for="MovieDTO.FullPath" class="form-control" />
+                <span asp-validation-for="MovieDTO.FullPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieDTO.MovieName" class="control-label"></label>
+                <input asp-for="MovieDTO.MovieName" class="form-control" />
+                <span asp-validation-for="MovieDTO.MovieName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieDTO.CreationDate" class="control-label"></label>
+                <input asp-for="MovieDTO.CreationDate" class="form-control" />
+                <span asp-validation-for="MovieDTO.CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieDTO.Event" class="control-label"></label>
+                <input asp-for="MovieDTO.Event" class="form-control" />
+                <span asp-validation-for="MovieDTO.Event" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieDTO.TaggedPersons" class="control-label"></label>
+                <input asp-for="MovieDTO.TaggedPersons" class="form-control" />
+                <span asp-validation-for="MovieDTO.TaggedPersons" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieDTO.Location" class="control-label"></label>
+                <input asp-for="MovieDTO.Location" class="form-control" />
+                <span asp-validation-for="MovieDTO.Location" class="text-danger"></span>
+            </div>
+            @*<div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="MovieDTO.FlgMoved" /> @Html.DisplayNameFor(model => model.MovieDTO.FlgMoved)
+                </label>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="MovieDTO.Duration" class="control-label"></label>
+                <input asp-for="MovieDTO.Duration" class="form-control" />
+                <span asp-validation-for="MovieDTO.Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

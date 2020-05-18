@@ -11,3 +11,15 @@ C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\bin\Debug\En
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\obj\Debug\ObjectWCF.csproj.CopyComplete
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\obj\Debug\ObjectWCF.dll
 C:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\obj\Debug\ObjectWCF.pdb
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\bin\Debug\ObjectWCF.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\bin\Debug\ObjectWCF.pdb
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\bin\Debug\ModelDesignFirst_L1.exe
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\bin\Debug\EntityFramework.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\bin\Debug\ModelDesignFirst_L1.pdb
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\bin\Debug\ModelDesignFirst_L1.exe.config
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\bin\Debug\EntityFramework.xml
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\obj\Debug\ObjectWCF.csprojAssemblyReference.cache
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\obj\Debug\ObjectWCF.csproj.CoreCompileInputs.cache
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\obj\Debug\ObjectWCF.csproj.CopyComplete
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\obj\Debug\ObjectWCF.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ObjectWCF\obj\Debug\ObjectWCF.pdb

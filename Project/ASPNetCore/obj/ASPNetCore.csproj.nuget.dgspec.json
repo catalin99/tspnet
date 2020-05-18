@@ -1,0 +1,145 @@
+{
+  "format": 1,
+  "restore": {
+    "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ASPNetCore\\ASPNetCore.csproj": {}
+  },
+  "projects": {
+    "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ASPNetCore\\ASPNetCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ASPNetCore\\ASPNetCore.csproj",
+        "projectName": "ASPNetCore",
+        "projectPath": "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ASPNetCore\\ASPNetCore.csproj",
+        "packagesPath": "C:\\Users\\catal\\.nuget\\packages\\",
+        "outputPath": "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ASPNetCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\catal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ModelDesignFirst_L1\\ModelDesignFirst_L1.csproj": {
+                "projectPath": "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ModelDesignFirst_L1\\ModelDesignFirst_L1.csproj"
+              },
+              "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ObjectWCF\\ObjectWCF.csproj": {
+                "projectPath": "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ObjectWCF\\ObjectWCF.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "System.ServiceModel.Duplex": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.Http": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.NetTcp": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.Security": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ModelDesignFirst_L1\\ModelDesignFirst_L1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ModelDesignFirst_L1\\ModelDesignFirst_L1.csproj",
+        "projectName": "ModelDesignFirst_L1",
+        "projectPath": "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ModelDesignFirst_L1\\ModelDesignFirst_L1.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ObjectWCF\\ObjectWCF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ObjectWCF\\ObjectWCF.csproj",
+        "projectName": "ObjectWCF",
+        "projectPath": "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ObjectWCF\\ObjectWCF.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ModelDesignFirst_L1\\ModelDesignFirst_L1.csproj": {
+                "projectPath": "W:\\Faculty\\tspnet\\Laboratoare Catalin Belu\\tspnet\\Project\\ModelDesignFirst_L1\\ModelDesignFirst_L1.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}

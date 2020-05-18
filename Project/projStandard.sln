@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "formstandard", "formstandar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostWCF", "HostWCF\HostWCF.csproj", "{0A36048B-E04B-4ACD-A085-CA9F8F1B880A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNetCore", "ASPNetCore\ASPNetCore.csproj", "{61FDDF3C-DF25-4711-A3F9-241DEA98B9DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0A36048B-E04B-4ACD-A085-CA9F8F1B880A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A36048B-E04B-4ACD-A085-CA9F8F1B880A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A36048B-E04B-4ACD-A085-CA9F8F1B880A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61FDDF3C-DF25-4711-A3F9-241DEA98B9DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61FDDF3C-DF25-4711-A3F9-241DEA98B9DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61FDDF3C-DF25-4711-A3F9-241DEA98B9DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61FDDF3C-DF25-4711-A3F9-241DEA98B9DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
