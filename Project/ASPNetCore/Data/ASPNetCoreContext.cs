@@ -17,6 +17,7 @@ namespace ASPNetCore.Data
         public DbSet<ASPNetCore.Models.PhotoDTO> Photos { get; set; }
         public DbSet<ASPNetCore.Models.MovieDTO> Movies { get; set; }
         public DbSet<ASPNetCore.Models.PropertyCodeDTO> PropertyCodes { get; set; }
+        public DbSet<ASPNetCore.Models.PropertyDTO> Property { get; set; }
 
     }
 }

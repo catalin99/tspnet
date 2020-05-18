@@ -38,6 +38,14 @@ namespace ASPNetCore.Pages.Movie
             var mapper = new Mapper(config);
 
             MovieDTO = mapper.Map<ModelDesignFirst_L1.Movie, MovieDTO>(movie);
+            MovieDTO.Props = new List<Tuple<string, string>>();
+            var props = await projectClient.GetPropertiesByMediaIDAsync((int)id);
+            var codes = await projectClient.GetPropertyCodesAsync();
+            foreach (var prop in props)
+            {
+                var propCode = codes.FirstOrDefault(c => c.ID == prop.PropertyCodeID);
+                MovieDTO.Props.Add(new Tuple<string, string>(propCode.Code, prop.Description));
+            }
 
             if (MovieDTO == null)
             {

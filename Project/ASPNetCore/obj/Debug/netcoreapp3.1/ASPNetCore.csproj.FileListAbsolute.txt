@@ -191,3 +191,4 @@ W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\n
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.dll
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.pdb
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.genruntimeconfig.cache
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\Razor\Pages\SpecialProperties\AssignToMedia.cshtml.g.cs

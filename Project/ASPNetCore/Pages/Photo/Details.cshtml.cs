@@ -41,6 +41,14 @@ namespace ASPNetCore.Pages.Photo
 
 
             PhotoDTO = mapper.Map<ModelDesignFirst_L1.Photo, PhotoDTO>(photo);
+            PhotoDTO.Props = new List<Tuple<string, string>>();
+            var props = await projectClient.GetPropertiesByMediaIDAsync((int)id);
+            var codes = await projectClient.GetPropertyCodesAsync();
+            foreach (var prop in props)
+            {
+                var propCode = codes.FirstOrDefault(c => c.ID == prop.PropertyCodeID);
+                PhotoDTO.Props.Add(new Tuple<string, string>(propCode.Code, prop.Description));
+            }
 
             if (PhotoDTO == null)
             {

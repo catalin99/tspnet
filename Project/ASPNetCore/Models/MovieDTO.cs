@@ -16,5 +16,6 @@ namespace ASPNetCore.Models
         public string Location { get; set; }
         public bool FlgMoved { get; set; }
         public int Duration { get; set; }
+        public List<Tuple<string, string>> Props { get; set; }
     }
 }

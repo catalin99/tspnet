@@ -47,11 +47,11 @@
             @Html.DisplayFor(model => model.PhotoDTO.Location)
         </dd>
         @*<dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PhotoDTO.FlgMoved)
-        </dt>*@
+                @Html.DisplayNameFor(model => model.PhotoDTO.FlgMoved)
+            </dt>*@
         @*<dd class="col-sm-10">
-            @Html.DisplayFor(model => model.PhotoDTO.FlgMoved)
-        </dd>*@
+                @Html.DisplayFor(model => model.PhotoDTO.FlgMoved)
+            </dd>*@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.PhotoDTO.Height)
         </dt>
@@ -64,6 +64,19 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PhotoDTO.Weight)
         </dd>
+    </dl>
+    <hr />
+    <h4>Special Properties</h4>
+    <dl>
+        @foreach (var item in @Model.PhotoDTO.Props)
+        {
+            <dt class="col-sm-2">
+                @item.Item1
+            </dt>
+            <dd class="col-sm-10">
+                @item.Item2
+            </dd>
+        }
     </dl>
 </div>
 <div>

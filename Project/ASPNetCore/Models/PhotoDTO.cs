@@ -19,5 +19,6 @@ namespace ASPNetCore.Models
         public bool FlgMoved { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
+        public List<Tuple<string, string>> Props { get; set; }
     }
 }
