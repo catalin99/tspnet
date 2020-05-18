@@ -12,6 +12,6 @@ namespace ASPNetCore.Models
         public int PropertyCodeID { get; set; }
         public int MediaID { get; set; }
 
-        public virtual PropertyCodeDTO PropertyCode { get; set; }
+        //public virtual PropertyCodeDTO PropertyCode { get; set; }
     }
 }

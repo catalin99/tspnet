@@ -19,8 +19,8 @@ namespace ModelDesignFirst_L1
                     ID = new Random().Next(1, 10000),
                     Description = desc,
                     MediaID = mediaID,
-                    PropertyCodeID = propCodeID,
-                    PropertyCode = propCode
+                    PropertyCodeID = propCodeID
+                    //PropertyCode = propCode
                 };
                 ctx.Properties.Add(prop);
                 ctx.SaveChanges();
@@ -33,6 +33,15 @@ namespace ModelDesignFirst_L1
             using (Model1Container ctx = new Model1Container())
             {
                 var props = ctx.Properties.Where(a => a.MediaID == id).ToList();
+                return props;
+            }
+        }
+
+        public List<Property> GetPropertiesByCodeID(int id)
+        {
+            using (Model1Container ctx = new Model1Container())
+            {
+                var props = ctx.Properties.Where(a => a.PropertyCodeID == id).ToList();
                 return props;
             }
         }

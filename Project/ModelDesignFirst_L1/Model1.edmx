@@ -11,10 +11,10 @@
     <EntitySet Name="Photos" EntityType="Model1.Store.Photos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PropertyCodes" EntityType="Model1.Store.PropertyCodes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Properties" EntityType="Model1.Store.Properties" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="DescToCode" Association="Model1.Store.DescToCode">
+    <!--<AssociationSet Name="DescToCode" Association="Model1.Store.DescToCode">
       <End Role="Property" EntitySet="Properties" />
       <End Role="PropertyCode" EntitySet="PropertyCodes" />
-    </AssociationSet>
+    </AssociationSet>-->
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -73,7 +73,7 @@
     <Property Name="PropertyCodeID" Type="int" Nullable="false" />
     <Property Name="MediaID" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="DescToCode">
+  <!--<Association Name="DescToCode">
     <End Role="Property" Type="Model1.Store.Properties" Multiplicity="*" />
     <End Role="PropertyCode" Type="Model1.Store.PropertyCodes" Multiplicity="1" />
     <ReferentialConstraint>
@@ -84,7 +84,7 @@
         <PropertyRef Name="PropertyCodeID" />
       </Dependent>
     </ReferentialConstraint>
-  </Association>
+  </Association>-->
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -95,10 +95,10 @@
           <EntitySet Name="Photos" EntityType="Model1.Photo" />
           <EntitySet Name="PropertyCodes" EntityType="Model1.PropertyCode" />
           <EntitySet Name="Properties" EntityType="Model1.Property" />
-          <AssociationSet Name="DescToCode" Association="Model1.DescToCode">
+          <!--<AssociationSet Name="DescToCode" Association="Model1.DescToCode">
             <End Role="Property" EntitySet="Properties" />
             <End Role="PropertyCode" EntitySet="PropertyCodes" />
-          </AssociationSet>
+          </AssociationSet>-->
         </EntityContainer>
         <EntityType Name="User">
           <Key>
@@ -147,7 +147,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Code" Type="String" Nullable="false" />
-          <NavigationProperty Name="Properties" Relationship="Model1.DescToCode" FromRole="PropertyCode" ToRole="Property" />
+          <!--<NavigationProperty Name="Properties" Relationship="Model1.DescToCode" FromRole="PropertyCode" ToRole="Property" />-->
         </EntityType>
         <EntityType Name="Property">
           <Key>
@@ -155,11 +155,11 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" Nullable="false" />
-          <NavigationProperty Name="PropertyCode" Relationship="Model1.DescToCode" FromRole="Property" ToRole="PropertyCode" />
+          <!--<NavigationProperty Name="PropertyCode" Relationship="Model1.DescToCode" FromRole="Property" ToRole="PropertyCode" />-->
           <Property Name="PropertyCodeID" Type="Int32" Nullable="false" />
           <Property Name="MediaID" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="DescToCode">
+        <!--<Association Name="DescToCode">
           <End Type="Model1.Property" Role="Property" Multiplicity="*" />
           <End Type="Model1.PropertyCode" Role="PropertyCode" Multiplicity="1" />
           <ReferentialConstraint>
@@ -170,7 +170,7 @@
               <PropertyRef Name="PropertyCodeID" />
             </Dependent>
           </ReferentialConstraint>
-        </Association>
+        </Association>-->
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

@@ -1,0 +1,36 @@
+﻿@page
+@model ASPNetCore.Pages.SpecialProperties.SpecialPropertiesModel
+
+@{
+    ViewData["Title"] = "SpecialProperties";
+}
+
+<h1>SpecialProperties</h1>
+
+<p>
+    <a asp-page="SpecialPropertiesCreate">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyCodeDTO[0].Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyCodeDTO[0].Uses)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PropertyCodeDTO) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uses)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

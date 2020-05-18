@@ -78,6 +78,9 @@ namespace ServiceReferenceMyPhotos
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceProperty/GetPropertiesByMediaID", ReplyAction="http://tempuri.org/InterfaceProperty/GetPropertiesByMediaIDResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<ModelDesignFirst_L1.Property>> GetPropertiesByMediaIDAsync(int id);
+
+        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceProperty/GetPropertiesByCodeID", ReplyAction = "http://tempuri.org/InterfaceProperty/GetPropertiesByCodeIDResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ModelDesignFirst_L1.Property>> GetPropertiesByCodeIDAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
@@ -234,7 +237,12 @@ namespace ServiceReferenceMyPhotos
         {
             return base.Channel.GetPropertiesByMediaIDAsync(id);
         }
-        
+
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ModelDesignFirst_L1.Property>> GetPropertiesByCodeIDAsync(int id)
+        {
+            return base.Channel.GetPropertiesByCodeIDAsync(id);
+        }
+
         public virtual System.Threading.Tasks.Task OpenAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndOpen));

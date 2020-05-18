@@ -113,5 +113,10 @@ namespace ObjectWCF
         {
             return new Property().GetPropertiesByMediaID(id);
         }
+
+        public List<Property> GetPropertiesByCodeID(int id)
+        {
+            return new Property().GetPropertiesByCodeID(id);
+        }
     }
 }

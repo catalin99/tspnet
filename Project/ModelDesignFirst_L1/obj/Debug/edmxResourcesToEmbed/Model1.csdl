@@ -6,10 +6,10 @@
     <EntitySet Name="Photos" EntityType="Model1.Photo" />
     <EntitySet Name="PropertyCodes" EntityType="Model1.PropertyCode" />
     <EntitySet Name="Properties" EntityType="Model1.Property" />
-    <AssociationSet Name="DescToCode" Association="Model1.DescToCode">
-      <End Role="Property" EntitySet="Properties" />
-      <End Role="PropertyCode" EntitySet="PropertyCodes" />
-    </AssociationSet>
+    <!--<AssociationSet Name="DescToCode" Association="Model1.DescToCode">
+            <End Role="Property" EntitySet="Properties" />
+            <End Role="PropertyCode" EntitySet="PropertyCodes" />
+          </AssociationSet>-->
   </EntityContainer>
   <EntityType Name="User">
     <Key>
@@ -58,7 +58,7 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Code" Type="String" Nullable="false" />
-    <NavigationProperty Name="Properties" Relationship="Model1.DescToCode" FromRole="PropertyCode" ToRole="Property" />
+    <!--<NavigationProperty Name="Properties" Relationship="Model1.DescToCode" FromRole="PropertyCode" ToRole="Property" />-->
   </EntityType>
   <EntityType Name="Property">
     <Key>
@@ -66,20 +66,20 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Description" Type="String" Nullable="false" />
-    <NavigationProperty Name="PropertyCode" Relationship="Model1.DescToCode" FromRole="Property" ToRole="PropertyCode" />
+    <!--<NavigationProperty Name="PropertyCode" Relationship="Model1.DescToCode" FromRole="Property" ToRole="PropertyCode" />-->
     <Property Name="PropertyCodeID" Type="Int32" Nullable="false" />
     <Property Name="MediaID" Type="Int32" Nullable="false" />
   </EntityType>
-  <Association Name="DescToCode">
-    <End Type="Model1.Property" Role="Property" Multiplicity="*" />
-    <End Type="Model1.PropertyCode" Role="PropertyCode" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="PropertyCode">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Property">
-        <PropertyRef Name="PropertyCodeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <!--<Association Name="DescToCode">
+          <End Type="Model1.Property" Role="Property" Multiplicity="*" />
+          <End Type="Model1.PropertyCode" Role="PropertyCode" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyCode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Property">
+              <PropertyRef Name="PropertyCodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>-->
 </Schema>

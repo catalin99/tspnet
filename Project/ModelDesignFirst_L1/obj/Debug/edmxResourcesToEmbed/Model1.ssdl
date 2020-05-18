@@ -6,10 +6,10 @@
     <EntitySet Name="Photos" EntityType="Model1.Store.Photos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PropertyCodes" EntityType="Model1.Store.PropertyCodes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Properties" EntityType="Model1.Store.Properties" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="DescToCode" Association="Model1.Store.DescToCode">
+    <!--<AssociationSet Name="DescToCode" Association="Model1.Store.DescToCode">
       <End Role="Property" EntitySet="Properties" />
       <End Role="PropertyCode" EntitySet="PropertyCodes" />
-    </AssociationSet>
+    </AssociationSet>-->
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -68,7 +68,7 @@
     <Property Name="PropertyCodeID" Type="int" Nullable="false" />
     <Property Name="MediaID" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="DescToCode">
+  <!--<Association Name="DescToCode">
     <End Role="Property" Type="Model1.Store.Properties" Multiplicity="*" />
     <End Role="PropertyCode" Type="Model1.Store.PropertyCodes" Multiplicity="1" />
     <ReferentialConstraint>
@@ -79,5 +79,5 @@
         <PropertyRef Name="PropertyCodeID" />
       </Dependent>
     </ReferentialConstraint>
-  </Association>
+  </Association>-->
 </Schema>

@@ -19,6 +19,6 @@ namespace ModelDesignFirst_L1
         public int PropertyCodeID { get; set; }
         public int MediaID { get; set; }
     
-        public virtual PropertyCode PropertyCode { get; set; }
+        //public virtual PropertyCode PropertyCode { get; set; }
     }
 }

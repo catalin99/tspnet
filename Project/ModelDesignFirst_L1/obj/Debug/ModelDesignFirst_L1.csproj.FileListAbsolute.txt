@@ -28,8 +28,8 @@ W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ModelDesignFirst_L1\bi
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ModelDesignFirst_L1\bin\Debug\EntityFramework.SqlServer.dll
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ModelDesignFirst_L1\bin\Debug\EntityFramework.xml
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ModelDesignFirst_L1\bin\Debug\EntityFramework.SqlServer.xml
-W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ModelDesignFirst_L1\obj\Debug\ModelDesignFirst_L1.csprojAssemblyReference.cache
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ModelDesignFirst_L1\obj\Debug\ModelDesignFirst_L1.csproj.CoreCompileInputs.cache
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ModelDesignFirst_L1\obj\Debug\ModelDesignFirst_L1.csproj.CopyComplete
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ModelDesignFirst_L1\obj\Debug\ModelDesignFirst_L1.exe
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ModelDesignFirst_L1\obj\Debug\ModelDesignFirst_L1.pdb
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ModelDesignFirst_L1\obj\Debug\ModelDesignFirst_L1.csprojAssemblyReference.cache
