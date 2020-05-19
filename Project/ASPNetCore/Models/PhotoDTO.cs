@@ -20,5 +20,6 @@ namespace ASPNetCore.Models
         public int Height { get; set; }
         public int Weight { get; set; }
         public List<Tuple<string, string>> Props { get; set; }
+        
     }
 }

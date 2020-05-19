@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using ASPNetCore.Data;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ASPNetCore
 {

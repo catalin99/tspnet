@@ -5,11 +5,32 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+    <center><h1>Movies</h1></center>
+<hr />
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Create New Movie</a>
 </p>
+<hr />
+<center><h4>Filter Section</h4></center>
+<form method="post">
+    <p>
+        Name: <input type="text" name="SearchName" />
+        Event: <input type="text" name="SearchEvent" />
+        Persons: <input type="text" name="SearchPersons" />
+        Location:  <input type="text" name="SearchLocation" />
+    </p>
+    <p>
+        Special Property: <input type="text" name="SpecialProp" />
+        <b>Clear Filter</b> <input type="checkbox" name="DeleteFilter" />
+    </p>
+    <p>
+        <input type="submit" value="Filter" />
+        <b>Results: </b> @Model.Count
+        | @Model.Filter
+    </p>
+</form>
+<hr />
+<center><h4>List of Movies</h4></center>
 <table class="table">
     <thead>
         <tr>
@@ -32,8 +53,8 @@
                 @Html.DisplayNameFor(model => model.Movies[0].Location)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.Movies[0].FlgMoved)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Movies[0].FlgMoved)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Movies[0].Duration)
             </th>
@@ -41,38 +62,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Movies) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullPath)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MovieName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreationDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Event)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TaggedPersons)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.FlgMoved)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.Duration)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Movies)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullPath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Event)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaggedPersons)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.FlgMoved)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
