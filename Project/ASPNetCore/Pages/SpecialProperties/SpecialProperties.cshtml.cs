@@ -33,6 +33,7 @@ namespace ASPNetCore.Pages.SpecialProperties
             //Map the objects
             var mapper = new Mapper(config);
             PropertyCodeDTO = mapper.Map<List<ModelDesignFirst_L1.PropertyCode>, List<PropertyCodeDTO>>(propertyCodes);
+            PropertyCodeDTO = PropertyCodeDTO.OrderBy(p => p.Code).ToList();
             foreach (var item in PropertyCodeDTO)
             {
                 var props = await projectClient.GetPropertiesByCodeIDAsync(item.ID);

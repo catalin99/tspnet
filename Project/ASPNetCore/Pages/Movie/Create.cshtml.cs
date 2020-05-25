@@ -9,6 +9,8 @@ using ASPNetCore.Data;
 using ASPNetCore.Models;
 using ServiceReferenceMyPhotos;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace ASPNetCore.Pages.Movie
 {
@@ -29,6 +31,8 @@ namespace ASPNetCore.Pages.Movie
 
         [BindProperty]
         public MovieDTO MovieDTO { get; set; }
+        [BindProperty]
+        public IFormFile Upload { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -44,6 +48,9 @@ namespace ASPNetCore.Pages.Movie
             //Map the objects
             var mapper = new Mapper(config);
             var movie = mapper.Map<MovieDTO, ModelDesignFirst_L1.Movie>(MovieDTO);
+            movie.MovieName = Upload.FileName;
+            string relativePath = @"~/Resources/Videos/" + Path.GetFileName(Upload.FileName);
+            movie.FullPath = relativePath;
 
             await projectClient.CreateMovieAsync(movie.FullPath, movie.MovieName, movie.CreationDate, movie.Event, movie.TaggedPersons, movie.Location, movie.Duration);
 

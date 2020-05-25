@@ -11,9 +11,13 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="Upload" class="control-label"></label>
+                <input type="file" asp-for="Upload" />
+            </div>
+            @*<div class="form-group">
                 <label asp-for="MovieDTO.FullPath" class="control-label"></label>
                 <input asp-for="MovieDTO.FullPath" class="form-control" />
                 <span asp-validation-for="MovieDTO.FullPath" class="text-danger"></span>
@@ -22,7 +26,7 @@
                 <label asp-for="MovieDTO.MovieName" class="control-label"></label>
                 <input asp-for="MovieDTO.MovieName" class="form-control" />
                 <span asp-validation-for="MovieDTO.MovieName" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="MovieDTO.CreationDate" class="control-label"></label>
                 <input asp-for="MovieDTO.CreationDate" class="form-control" />
@@ -44,10 +48,10 @@
                 <span asp-validation-for="MovieDTO.Location" class="text-danger"></span>
             </div>
             @*<div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="MovieDTO.FlgMoved" /> @Html.DisplayNameFor(model => model.MovieDTO.FlgMoved)
-                </label>
-            </div>*@
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="MovieDTO.FlgMoved" /> @Html.DisplayNameFor(model => model.MovieDTO.FlgMoved)
+            </label>
+        </div>*@
             <div class="form-group">
                 <label asp-for="MovieDTO.Duration" class="control-label"></label>
                 <input asp-for="MovieDTO.Duration" class="form-control" />

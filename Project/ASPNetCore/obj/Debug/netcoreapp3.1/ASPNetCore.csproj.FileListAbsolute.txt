@@ -154,8 +154,6 @@ W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\n
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\netcoreapp3.1\ObjectWCF.pdb
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\netcoreapp3.1\EntityFramework.xml
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.csprojAssemblyReference.cache
-W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.csproj.CoreCompileInputs.cache
-W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.MvcApplicationPartsAssemblyInfo.cache
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.RazorAssemblyInfo.cache
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.RazorAssemblyInfo.cs
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.AssemblyInfoInputs.cache
@@ -192,3 +190,14 @@ W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\n
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.pdb
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.genruntimeconfig.cache
 W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\Razor\Pages\SpecialProperties\AssignToMedia.cshtml.g.cs
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.csproj.CoreCompileInputs.cache
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\obj\Debug\netcoreapp3.1\ASPNetCore.MvcApplicationPartsAssemblyInfo.cache
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\netcoreapp3.1\Microsoft.Web.Helpers.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\netcoreapp3.1\WebMatrix.Data.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\netcoreapp3.1\WebMatrix.WebData.dll
+W:\Faculty\tspnet\Laboratoare Catalin Belu\tspnet\Project\ASPNetCore\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll

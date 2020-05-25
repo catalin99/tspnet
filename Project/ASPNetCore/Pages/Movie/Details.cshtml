@@ -1,5 +1,6 @@
 ﻿@page
 @model ASPNetCore.Pages.Movie.DetailsModel
+@using System.Globalization
 
 @{
     ViewData["Title"] = "Details";
@@ -74,6 +75,16 @@
             </dd>
         }
     </dl>
+</div>
+<div>
+    @*<img src="@Url.Content("../Resources/Videos/"+@Model.MovieDTO.MovieName)" alt="missing" style="width:200px;height:200px" />*@
+    @*<iframe width="200"
+            height="200"
+            src="../Resources/Videos/" + @Model.MovieDTO.MovieName
+            frameborder="1"
+            allowfullscreen>
+    </iframe>*@
+    <video id="videoplayer" src="@Url.Content("../Resources/Videos/"+@Model.MovieDTO.MovieName)" alt="missing" controls width = "400" height="500" loop/>
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.MovieDTO.ID">Edit</a> |

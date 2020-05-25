@@ -80,7 +80,7 @@
     </dl>
 </div>
 <div>
-    <img src="@Url.Content(@Model.PhotoDTO.FullPath)" alt="missing" style="width:200px;height:200px" />
+    <img src="@Url.Content("../Resources/Images/"+@Model.PhotoDTO.PhotoName)" alt="missing" style="width:200px;height:200px" />
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.PhotoDTO.ID">Edit</a> |

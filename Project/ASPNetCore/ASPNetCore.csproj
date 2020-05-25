@@ -5,7 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Resources\Images\car.jpg" />
+    <None Include="wwwroot\Resources\Images\descarcare.jpg" />
+    <None Include="wwwroot\Resources\Images\descărcare %281%29.jpg" />
+    <None Include="wwwroot\Resources\Images\descărcare %282%29.jpg" />
+    <None Include="wwwroot\Resources\Images\Microsoft_.NET_logo.png" />
+    <None Include="wwwroot\Resources\Videos\video-1586779435.mp4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNet.WebHelpers" Version="3.2.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
